@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-EN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- Set page title and icon -->
+    <title>cookie0_o dev Page</title>
+    <link rel="icon" type="image/x-icon" href="https://findicons.com/files/icons/2779/simple_icons/128/github_128_black.png">
+
+    <!-- Import css -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-------------------------------------------------------------------------------------------------->
+
+
+    <!-- Show profile picture from my Github account [cookie0o] -->
+    <div class="image">
+        <img
+        data-image-title="profile/picture", 
+        data-image-description="",
+        data-image-caption="",
+        data-medium-file="https://avatars.githubusercontent.com/u/81589649?v=4?w=200",
+        style="border-style:none;border-width:0;border-radius:90px;",
+        width="260",
+        height="260",
+        srcset="https://avatars.githubusercontent.com/u/81589649?v=4",
+        sizes="(max-width: 260px), 260px">
+    </div>
+
+    <!-- Apply random background and check if its repeating -->
+    <script>
+        var random = Math.floor(Math.random() * 8) + 1;
+        var bg = "url('./background/bg-0" + random + ".png')";
+        document.body.style.backgroundImage = bg;
+        var lastbg = localStorage.getItem("lastbg");
+        if (lastbg == bg) {
+            random = Math.floor(Math.random() * 8) + 1;
+            bg = "url('./background/bg-0" + random + ".png')";
+        }
+        document.body.style.backgroundImage = bg;
+        localStorage.setItem("lastbg", bg);
+    </script>
+    
+    <!-- Name -->
+    <div class="name">
+        cookie0_o
+    </div>
+
+    <!-- Links -->
+    <div class="link">
+    <!-- Github -->
+        <a href="https://github.com/cookie0o"><img src="./link-icons/github.png" alt="Github-link" style="width:47px;height:47px;" rel="noopener nofollow" target="_blank"></a>
+        <img src="./link-icons/spacer.png" alt="spacer" style="width:20px;height:20px;">
+    <!-- Twitter -->
+        <a href="https://twitter.com/_thereal_cookie"><img src="./link-icons/twitter.png" alt="Twitter-link" style="width:47px;height:47px;" rel="noopener nofollow" target="_blank"></a> 
+        <img src="./link-icons/spacer.png" alt="spacer" style="width:20px;height:20px;">
+    <!-- Mail -->
+        <a href="mailto:therealcookie@waifu.club"><img src="./link-icons/gmail.png" alt="Mail-link" style="width:47px;height:47px;" rel="noopener nofollow" target="_blank"></a>
+    </div> 
+
+    <!-- Introduction-title -->
+    <div class="introduction-title">
+        Who am I?
+    </div>
+
+    <!-- Introduction -->
+    <div class="introduction">
+        I`m cookie0_o a random dude who makes random Python projects.<br>Sometimes I`m very active and Sometimes rarly.
+    </div>
+
+    <!-- Link preview -->
+    <head>
+        <meta property="og:image" content="https://avatars.githubusercontent.com/u/81589649?v=4?w=200" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://cookie0o.ml" />
+        <meta property="og:title" content="cookie0_o`s Personal page!" />
+        <meta property="og:description" content="click this link and read/see more about me here." />
+    </head>
+
+</html>
+

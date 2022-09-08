@@ -1,0 +1,58 @@
+/* [image] class */
+.image {
+    position: relative;
+    text-align: center;  /* center image vertical */
+    top: 20vh;           /* change image hight */
+}
+
+/* [name] class */
+.name {
+    position: relative;
+    text-align: center;
+    top: 20vh;
+    color: white;  
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    font-size: 2rem;
+}
+
+/* [link] class */
+.link {
+    display: inline-block;
+    margin-top: 22vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* [introduction-title] class */
+.introduction-title {
+    position: relative;
+    text-align: center;
+    top: 1vh;
+    color: white;  
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    font-size: 1.7rem;   
+}
+
+/* [introduction] class */
+.introduction {
+    position: relative;
+    text-align: center;
+    top: 1vh;
+    color: white;  
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    font-size: 1.3rem;   
+}
+
+
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    background-size: cover;
+}
+
