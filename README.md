@@ -1,4 +1,4 @@
-# personal-webpage v0.1
+# personal-website v0.1
 
 [website link](http://cookie0o.ml)
 
