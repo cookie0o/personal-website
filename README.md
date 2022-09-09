@@ -1,6 +1,6 @@
 # personal-website v0.1
 
-[website link](http://cookie0o.ml)
+[website link](https://cookie0o.github.io/personal-website/)
 
 ![image](https://user-images.githubusercontent.com/81589649/189235205-7938a43a-9fec-445d-818c-15d57c5d4481.png)
 
