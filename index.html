@@ -10,10 +10,54 @@
 
     <!-- Import css -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./loading-bar/loading-bar.css">
 
+    <!-- Import js -->
+    <script type="text/javascript" href="./loading-bar/loading-bar.js"></script>
 
     <!-------------------------------------------------------------------------------------------------->
 
+    <!-- Loading screen -->
+    <script>
+        ;(function(){
+        function id(v){ return document.getElementById(v); }
+        function loadbar() {
+            var ovrl = id("overlay"),
+                prog = id("progress"),
+                img = document.images,
+                c = 0,
+                tot = img.length;
+            if(tot == 0) return doneLoading();
+
+            function imgLoaded(){
+            c += 1;
+            var perc = ((100/tot*c) << 0) +"%";
+            prog.style.width = perc;
+            if(c===tot) return doneLoading();
+            }
+            function doneLoading(){
+            ovrl.style.opacity = 0;
+
+            setTimeout(function(){ 
+                ovrl.style.display = "none";
+            }, 1200);
+            }
+            for(var i=0; i<tot; i++) {
+            var tImg     = new Image();
+            tImg.onload  = imgLoaded;
+            tImg.onerror = imgLoaded;
+            tImg.src     = img[i].src;
+            }    
+        }
+        document.addEventListener('DOMContentLoaded', loadbar, false);
+        }());  
+    </script>    
+
+    <div id="overlay">
+        <div id="progstat"></div>
+        <div id="progress"></div>
+        <img class="loading-girl" src="./loading-bar/loading-girl.gif" alt="this slowpoke moves"  width="250" />
+    </div>
 
     <!-- Show profile picture from my Github account [cookie0o] -->
     <div class="image">
@@ -78,6 +122,8 @@
         <meta property="og:title" content="cookie0_o`s Personal page!" />
         <meta property="og:description" content="click this link and read/see more about me here." />
     </head>
+
+    <!-------------------------------------------------------------------------------------------------->
 
 </html>
 

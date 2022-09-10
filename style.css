@@ -49,10 +49,48 @@
 
 
 
+iframe {
+    position: sticky;
+    left: -7px;
+    top: 35.5vh;
+}
+
 body {
     background-repeat: no-repeat;
     background-attachment: fixed;
-
     background-size: cover;
+    background-color: #636363;
+    padding: 1em;
 }
 
+
+/* LOADING SCREEN */
+*{margin:0;}
+body{ font: 200 16px/1 sans-serif; }
+
+#overlay{
+  position:fixed;
+  z-index:99999;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background:rgba(0,0,0);
+  transition: 1s 0.4s;
+}
+#progress{
+  height:1px;
+  background:#fff;
+  position:absolute;
+  width:0;                /* will be increased by JS */
+  top:50%;
+}
+
+.loading-girl{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 4.4cm;
+}
