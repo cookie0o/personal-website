@@ -9,47 +9,14 @@
     <link rel="icon" type="image/x-icon" href="https://findicons.com/files/icons/2779/simple_icons/128/github_128_black.png">
 
     <!-- Import css -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="loading-bar.css">
+    <link rel="stylesheet" #type="text/css" href="./res/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./res/css/loading-bar.css">
+    <!-- import js -->
+    <script src="./res/js/script.js"></script>
 
     <!-------------------------------------------------------------------------------------------------->
 
     <!-- Loading screen -->
-    <script>
-        ;(function(){
-        function id(v){ return document.getElementById(v); }
-        function loadbar() {
-            var ovrl = id("overlay"),
-                prog = id("progress"),
-                img = document.images,
-                c = 0,
-                tot = img.length;
-            if(tot == 0) return doneLoading();
-
-            function imgLoaded(){
-            c += 1;
-            var perc = ((100/tot*c) << 0) +"%";
-            prog.style.width = perc;
-            if(c===tot) return doneLoading();
-            }
-            function doneLoading(){
-            ovrl.style.opacity = 0;
-
-            setTimeout(function(){ 
-                ovrl.style.display = "none";
-            }, 1200);
-            }
-            for(var i=0; i<tot; i++) {
-            var tImg     = new Image();
-            tImg.onload  = imgLoaded;
-            tImg.onerror = imgLoaded;
-            tImg.src     = img[i].src;
-            }    
-        }
-        document.addEventListener('DOMContentLoaded', loadbar, false);
-        }());  
-    </script>    
-
     <div id="overlay">
         <div id="progstat"></div>
         <div id="progress"></div>
@@ -82,6 +49,7 @@
         }
         document.body.style.backgroundImage = bg;
         localStorage.setItem("lastbg", bg);
+        localStorage.setItem("bg", bg);
     </script>
     
     <!-- Name -->
@@ -119,6 +87,7 @@
         <meta property="og:title" content="cookie0_o`s Personal page!" />
         <meta property="og:description" content="click this link and read/see more about me here." />
     </head>
+
 
     <!-------------------------------------------------------------------------------------------------->
 
