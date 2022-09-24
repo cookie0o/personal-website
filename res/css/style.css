@@ -90,3 +90,9 @@ body {
     background-position: var(--mouseX) var(--mouseY);
     background-repeat: no-repeat;
 }
+
+script {
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden
+}

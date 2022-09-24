@@ -32,11 +32,15 @@
     document.addEventListener('DOMContentLoaded', loadbar, false);
     }());
 
-
-let dde = document.documentElement;
-dde.addEventListener("mousemove", e => {
-    let ow = dde.offsetWidth; 
-    let oh = dde.offsetHeight; 
-    dde.style.setProperty('--mouseX', e.clientX * 20 / ow + "%");
+// disable parallax on mobile devices
+var isMobile = window.orientation > -1;
+if (isMobile == false){
+// parallax effect
+    let dde = document.documentElement;
+    dde.addEventListener("mousemove", e => {
+        let ow = dde.offsetWidth; 
+        let oh = dde.offsetHeight; 
+        dde.style.setProperty('--mouseX', e.clientX * 20 / ow + "%");
     dde.style.setProperty('--mouseY', e.clientY * 20 / oh + "%");
-});
+    })
+}
