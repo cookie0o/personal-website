@@ -64,6 +64,14 @@ a:link {
     text-decoration: none;
 }
 
+/* [background] class */
+.background {
+    position: relative;
+    background-size: cover;
+    background-size: auto 115%;
+}
+
+
 /* [image hover] classes */
 .Github-link:hover img {
     transform: scale(1.2);
@@ -93,7 +101,5 @@ body {
 }
 
 script {
-    margin: 0; 
-    height: 100%; 
-    overflow: hidden
+    align-items: center;
 }

@@ -20,7 +20,7 @@
 
         setTimeout(function(){ 
             ovrl.style.display = "none";
-        }, 1200);
+        }, 2200);
         }
         for(var i=0; i<tot; i++) {
         var tImg     = new Image();
@@ -32,7 +32,7 @@
     document.addEventListener('DOMContentLoaded', loadbar, false);
     }());
 
-// disable parallax on mobile devices
+// Disable parallax on mobile devices
 var isMobile = window.orientation > -1;
 if (isMobile == false){
 // parallax effect
