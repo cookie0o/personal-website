@@ -40,7 +40,7 @@ if (isMobile == false){
     dde.addEventListener("mousemove", e => {
         let ow = dde.offsetWidth; 
         let oh = dde.offsetHeight; 
-        dde.style.setProperty('--mouseX', e.clientX * 20 / ow + "%");
-    dde.style.setProperty('--mouseY', e.clientY * 20 / oh + "%");
+    dde.style.setProperty('--mouseX', e.clientX * 15 / ow + "%");
+    dde.style.setProperty('--mouseY', e.clientY * 15 / oh + "%");
     })
 }

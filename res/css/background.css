@@ -1,0 +1,53 @@
+
+.background-container{
+    position: fixed;
+    top: 0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    background-position: var(--mouseX) var(--mouseY);
+}
+
+.stars {
+    background: black url("./background/stars.png") repeat;
+    position: absolute;
+    background-size: auto 120%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-position: var(--mouseX) var(--mouseY);
+    display: block;
+    z-index: 0;
+}
+  
+.twinkling{
+    width:10000px;
+    height: 100%;
+    background: transparent url("./background/twinkling.png") repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+
+    -moz-animation:move-background 70s linear infinite;
+    -ms-animation:move-background 70s linear infinite;
+    -o-animation:move-background 70s linear infinite;
+    -webkit-animation:move-background 70s linear infinite;
+    animation:move-background 70s linear infinite;
+
+}
+
+.moon{
+    background: url("./background/moon.png") no-repeat;
+    height: 30vh;
+    width: 30vh;
+    position: absolute;
+    background-size: auto 95%;
+    z-index: 3;
+    right: 15vh;
+    top: 10vh;
+    background-position: var(--mouseX-moon) var(--mouseY-moon);
+}

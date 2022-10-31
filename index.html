@@ -12,6 +12,7 @@
 
     <!-- Import css -->
     <link rel="stylesheet" #type="text/css" href="./res/css/style.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" #type="text/css" href="./res/css/background.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" type="text/css" href="./res/css/loading-bar.css">
     <!-- import js -->
     <script src="./res/js/script.js"></script>
@@ -23,6 +24,13 @@
         <div id="progstat"></div>
         <div id="progress"></div>
         <img class="loading-girl" src="./loading-bar/loading-girl.gif" alt="this slowpoke moves"  width="250" />
+    </div>
+
+    <!-- Apply background -->
+    <div class="background-container">
+        <div class="moon"></div>
+        <div class="stars"></div>
+        <div class="twinkling"></div>
     </div>
 
     <!-- Show profile picture from my Github account [cookie0o] -->
@@ -39,24 +47,6 @@
         sizes="(max-width: 260px), 260px"
         >
     </div>
-
-    <!-- Get  background and apply it -->
-    <body id="background" class="background"></body>
-    <script>
-        // var random = Math.floor(Math.random() * 6) + 1;
-        // var bg = "url('./background/bg-0" + random + ".png')";
-        // var lastbg = localStorage.getItem("lastbg");
-        // if (lastbg == bg) {
-        //     random = Math.floor(Math.random() * 6) + 1;
-        //     bg = "url('./background/bg-0" + random + ".png')";
-        // }
-        // // document.body.style.backgroundImage = bg;
-        // document.getElementById("background").style.backgroundImage = bg;
-        // localStorage.setItem("lastbg", bg);
-        // localStorage.setItem("bg", bg);
-        var bg = "url('./background/bg-01.gif')";
-        document.getElementById("background").style.backgroundImage = bg;
-    </script>
 
     <!-- Name -->
     <div class="name">
@@ -100,7 +90,16 @@
         <meta property="og:title" content="cookie0_o`s Personal page!" />
         <meta property="og:description" content="click this link and read/see more about me here." />
     </head>
+
+
+    <!-- don´t need that anymore
+        <div class="copyright-notice">
+            background by <a href="https://midjourney.com"> midjourney.</a>
+        </div>
+    -->
     
     <!-------------------------------------------------------------------------------------------------->
+ 
+
 </html>
 
