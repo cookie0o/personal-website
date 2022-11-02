@@ -19,6 +19,8 @@
 
 /* [link] class */
 .link {
+    position: relative;
+    z-index: 4;
     display: inline-block;
     display: flex;
     justify-content: center;
@@ -34,7 +36,7 @@
     color: white;  
     font-weight: bold;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-size: 1.7rem;   
+    font-size: 1.7rem;
 }
 
 /* [introduction] class */
@@ -45,7 +47,7 @@
     color: white;  
     font-weight: bold;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-size: 1.3rem;   
+    font-size: 1.3rem;
 }
 
 /* [Copyright-notice] class */
@@ -68,12 +70,18 @@ a:link {
 /* [image hover] classes */
 .Github-link:hover img {
     transform: scale(1.2);
+    position: relative;
+    z-index: 4;
 }
 .Twitter-link:hover img {
     transform: scale(1.2);
+    position: relative;
+    z-index: 4;
 }
 .Mail-link:hover img {
     transform: scale(1.2);
+    position: relative;
+    z-index: 4;
 }
 
 
