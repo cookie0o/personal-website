@@ -12,10 +12,11 @@
 
     <!-- Import css -->
     <link rel="stylesheet" #type="text/css" href="./res/css/style.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" #type="text/css" href="./res/css/background.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" type="text/css" href="./res/css/loading-bar.css">
     <!-- import js -->
     <script src="./res/js/script.js"></script>
+    <script src="./res/js/particles.min.js"></script>
+    <script src="./res/js/background.js"></script>
 
     <!-------------------------------------------------------------------------------------------------->
 
@@ -24,13 +25,6 @@
         <div id="progstat"></div>
         <div id="progress"></div>
         <img class="loading-girl" src="./loading-bar/loading-girl.gif" alt="this slowpoke moves"  width="250" />
-    </div>
-
-    <!-- Apply background -->
-    <div class="background-container">
-        <div class="moon"></div>
-        <div class="stars"></div>
-        <div class="twinkling"></div>
     </div>
 
     <!-- Show profile picture from my Github account [cookie0o] -->
@@ -82,6 +76,16 @@
         I`m cookie0_o a random dude who makes random Python projects.<br>Sometimes I`m very active and Sometimes rarly.
     </div>
 
+    <!-- background -->
+    <script>
+        window.onload = function() {
+            Particles.init({
+              selector: '.background'
+            });
+        };
+    </script>
+    <canvas class="background"></canvas>
+
     <!-- Link preview -->
     <head>
         <meta property="og:image" content="https://avatars.githubusercontent.com/u/81589649?v=4?w=200" />
@@ -92,12 +96,7 @@
     </head>
 
 
-    <!-- don´t need that anymore
-        <div class="copyright-notice">
-            background by <a href="https://midjourney.com"> midjourney.</a>
-        </div>
-    -->
-    
+   
     <!-------------------------------------------------------------------------------------------------->
  
 

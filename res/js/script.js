@@ -32,15 +32,11 @@
     document.addEventListener('DOMContentLoaded', loadbar, false);
     }());
 
-// Disable parallax on mobile devices
-var isMobile = window.orientation > -1;
-if (isMobile == false){
-// parallax effect
-    let dde = document.documentElement;
-    dde.addEventListener("mousemove", e => {
-        let ow = dde.offsetWidth; 
-        let oh = dde.offsetHeight; 
-    dde.style.setProperty('--mouseX', e.clientX * 15 / ow + "%");
-    dde.style.setProperty('--mouseY', e.clientY * 15 / oh + "%");
-    })
-}
+// parallax effect (not used)
+let dde = document.documentElement;
+dde.addEventListener("mousemove", e => {
+    let ow = dde.offsetWidth; 
+    let oh = dde.offsetHeight; 
+dde.style.setProperty('--mouseX', e.clientX * 15 / ow + "%");
+dde.style.setProperty('--mouseY', e.clientY * 15 / oh + "%");
+})

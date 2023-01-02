@@ -92,7 +92,21 @@ iframe {
     top: 35.5vh;
 }
 
-
 script {
     align-items: center;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #161616;
 }
