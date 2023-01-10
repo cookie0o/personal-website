@@ -50,14 +50,6 @@
     font-size: 1.3rem;
 }
 
-/* [Copyright-notice] class */
-.copyright-notice {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    color: gray; 
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-}
 
 /* [link] class */
 a:link {
@@ -85,6 +77,15 @@ a:link {
 }
 
 
+.background {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: -5;
+    background: #161616;
+}
+
 
 iframe {
     position: sticky;
@@ -101,11 +102,34 @@ body {
     margin: 0;
     padding: 0;
 }
-.background {
+
+
+
+/* dark mode btn */
+.darkToggle {
+    appearance: none;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    bottom: 5px;
+    left: 5px;
+    background: rgb(255, 0, 0);
+    border-radius: 5px;
+    border: 2px solid #555;
+}
+
+.darkToggle:checked {
+    background: #333;
+}
+
+
+.vid_background{
     position: absolute;
     display: block;
-    top: 0;
+    width: 100vw;
+    height: 100vh;
     left: 0;
-    z-index: -1;
-    background-color: #161616;
+    top: 0;
+    z-index: -3;
 }
+

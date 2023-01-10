@@ -5,3 +5,4 @@ var particles = Particles.init({
   connectParticles: true,
   maxParticles: 150,
 });
+
