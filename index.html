@@ -86,40 +86,6 @@
     </script>
     <canvas class="background" id="background"></canvas>
 
-    <video muted loop id="myVideo" class="vid_background">
-        <source src='https://github.com/therealloneishere/f/blob/main/yes.mp4?raw=true' type="video/mp4">
-    </video>
-
-    <audio loop id="myAudio" onPlay="audioVolumeIn(this);">
-        <source src='https://github.com/therealloneishere/f/blob/main/yes.mp3?raw=true' type="audio/mp3">
-    </audio>
-
-    <!-- dark mode btn -->
-    <input type="checkbox" id="darkToggle" class="darkToggle">
-    <label for="darkToggle">
-
-    <script defer>
-        let darkToggle = document.querySelector('#darkToggle');
-        let bg = document.getElementById('background');
-        let vid = document.getElementById("myVideo");
-        let x = 0
-        vid.style.display = "none";
-
-        darkToggle.addEventListener('change', ()=> {
-        if (x == 0) {
-            bg.style.backgroundColor = "black";
-            vid.style.display = "block";
-            myVideo.play();
-            myAudio.play();
-            x = 1
-        } else{
-            bg.style.backgroundColor = "#161616";
-            vid.style.display = "none";
-            myVideo.pause();
-            myAudio.pause();
-            x = 0
-        }})
-    </script>
 
 
     <!-- Link preview -->
