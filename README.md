@@ -1,4 +1,4 @@
 # personal-website v1.4
 
-[website link](https://cookie0o.ml)
+[website link](https://cookie0o.github.io/personal-website/)
 
