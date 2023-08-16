@@ -1,0 +1,163 @@
+/* desktop */
+.desktop {
+  width: 100vw;
+  height: 100vh;
+
+  padding-top: 5px;
+} 
+
+
+/* Recycle Bin */
+.desktop .recycle-bin-ico {
+  position: absolute;
+  width: 98px;
+  height: 80px;
+
+  background-color: transparent;
+  border: 0px;
+
+  background-image: url('../IMG/recycle_bin_full.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60px 60px;
+} .desktop .recycle-bin-ico .txt {
+  position: absolute;
+  padding-left: 7px;
+  top: 62px;
+
+  font-family: "win95";
+  font-size: 18px;
+  color: white;
+}
+.recycle-bin {
+  position: absolute;
+  z-index: 991;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 593px;
+  height: 200px;
+  background-color: #C0C0C0;
+
+  border: 2px solid #9a9c9c ;
+  border-color: #9a9c9c;
+  border-width: 2px;
+  border-top-width: 3px;
+  border-left-width: 3px;
+  border-top-color: #F5FFFF;
+  border-left-color: #F5FFFF;
+
+  font-family: "win95";
+  font-size: 20px;
+  word-wrap: break-word;
+  }
+  .recycle-bin .recycle_bin_titlebar {
+  position: absolute;
+  z-index: 992;
+  top: 0px;
+  left: 0;
+  width: 593px;
+  height: 25px;
+
+  background-color: #0000AA;
+  
+  color: white;
+  }
+  .recycle-bin .recycle_bin_titlebar .recycle_bin_title {
+  position: absolute;
+  z-index: 993;
+  top: 5px;
+  left: 5px;
+  width: 500px;
+  height: 25px;
+  }
+  .recycle-bin .recycle_bin_titlebar .recycle_bin_closebtn {
+  position: absolute;
+  z-index: 993;
+  bottom: 1px;
+  right: 1px;
+  width: 22px;
+  height: 22px;
+
+  border-width: 0.5px;
+
+  background-image: url('../IMG/close.png');
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+} 
+/* Recycle Bin insides */
+.recycle-bin .recycle-bin-container {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.recycle-bin .recycle-bin-container .categories {
+  z-index: 994;
+  display: inline-flex;
+  margin-top: 7px;
+}
+.recycle-bin .recycle-bin-container .categories p {
+  position: relative;
+  border : 1px solid black;
+  white-space: nowrap;
+  padding: 0 25px;
+  flex-grow: 1;
+
+  font-size: 18px;
+}
+.recycle-bin .recycle-bin-container .infobar {
+  position: absolute;
+  z-index: 992;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-start;
+
+  border-top: 2px solid #9a9c9c;
+  bottom: -30px;
+}
+.recycle-bin .recycle-bin-container .infobar-background {
+  position: absolute;
+  z-index: 991;
+  width: 100%;
+  height: 20px;
+
+  background-color: #C0C0C0;
+
+  bottom: 0px;
+}
+.recycle-bin .recycle-bin-container .infobar p {
+  position: relative;
+  white-space: nowrap;
+  padding: 0 10px;
+  margin-right: 15px;
+  padding-top: 2px;
+  flex-grow: 1;
+
+  font-size: 15px;
+  bottom: 15px;
+}
+/* Recycle Bin Deleted Items */
+.recycle-bin .recycle-bin-container .filecontainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  bottom: 17px;
+
+  background-color: white;
+}
+.recycle-bin .recycle-bin-container .filecontainer .deleteditems {
+  display: inline-flex;
+}
+.recycle-bin .recycle-bin-container .filecontainer .deleteditems p {
+  position: relative;
+  white-space: nowrap;
+  padding-top: 2px;
+  flex-grow: 1;
+
+  font-size: 15px;
+  bottom: 15px;
+}
+
