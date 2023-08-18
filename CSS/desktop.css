@@ -1,0 +1,62 @@
+/* desktop */
+.desktop {
+  width: 100vw;
+  height: 100vh;
+
+  padding-top: 5px;
+} 
+
+
+/* Recycle Bin */
+.desktop .recycle-bin-ico {
+  position: absolute;
+  width: 100px;
+  height: 80px;
+
+  background-color: transparent;
+  border: 0px;
+
+  background-image: url('../IMG/ico/recycle_bin_full.png');
+  background-repeat: no-repeat;
+  background-position: 25px center;
+  background-size: 60px 60px;
+
+  text-align: center;
+} .desktop .recycle-bin-ico .txt {
+  position: absolute;
+  top: 62px;
+
+  width: 98px;
+
+  font-family: "win95";
+  font-size: 18px;
+  color: white;
+}
+
+/* About Me (.TXT) */
+.desktop .about-me-ico {
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  top: 125px;
+
+  background-color: transparent;
+  border: 0px;
+
+  background-image: url('../IMG/ico/text_file.png');
+  background-repeat: no-repeat;
+  background-position: 25px center;
+  background-size: 60px 60px;
+
+  text-align: center;
+} .desktop .about-me-ico .txt {
+  position: absolute;
+  top: 62px;
+
+  width: 98px;
+
+  font-family: "win95";
+  font-size: 18px;
+  color: white;
+}
+

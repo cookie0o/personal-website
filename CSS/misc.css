@@ -1,0 +1,248 @@
+.line {
+  position: absolute;
+  left: 42px;
+  bottom: 57px;
+  
+  background-image: url('../IMG/line.png');
+  background-repeat: no-repeat;
+  
+  width: 226px;
+  height: 7px;
+}
+
+.menubar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    z-index: 999;
+
+    width: 100vw;
+    height: 40px;
+    background-color: #C0C0C0;
+  }
+  .menubar .top {
+    position: absolute;
+    bottom: 40;
+    left: 0;
+
+    width: 100vw;
+    height: 3px;
+    background-color: #F5FFFF;
+  }
+  /* Start Button */
+  .menubar .startbtn {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+
+    width: 70px;
+    height: 30px;
+    text-align: right;
+    font-weight: bolder;
+    background-color: #BFBFBF;
+    border-left-color: #F5FFFF;
+    border-top-color: #F5FFFF;
+
+    background-image: url('../IMG/win95.png');
+    background-repeat: no-repeat;
+    background-size: 27px 30px;
+    background-position: bottom 10px;
+
+    font-family: "win95";
+    font-size: 17px;
+    padding-top: 3.5px;
+  }
+  /* Calendar Widget (Button) */
+  .menubar .calendar {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+
+    width: 80px;
+    height: 30px;
+    text-align: right;
+    font-weight: bolder;
+    background-color: #BFBFBF;
+    border-right-color: #F5FFFF;
+    border-bottom-color: #F5FFFF;
+
+    background-image: url('../IMG/ico/calendar.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: left 7px top 3px;
+
+    font-family: "win95";
+    font-size: 17px;
+    padding-top: 3.5px;
+}
+
+.startmenu {
+  position: absolute;
+  bottom: 37px;
+  left: 3px;
+  width: 270px;
+  height: 400px;
+
+  background-color: #C0C0C0;
+
+  border: 2px solid black ;
+  border-color: black;
+  border-width: 3px;
+  border-top-color: #F5FFFF;
+  border-left-color: #F5FFFF;
+  }
+  .startmenu .logo {
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    width: 40px;
+    height: 396px;
+
+    background-color: #868A8E;
+
+    background-image: url('../IMG/logo.png');
+  }
+  .startmenu .shutdownbtn {
+    position: absolute;
+    bottom: 2px;
+    left: 42px;
+    width: 226px;
+    height: 48px;
+
+    border: none;
+    background-color: transparent;
+
+    background-image: url('../IMG/ico/shutdown.png');
+    background-repeat: no-repeat;
+    background-size: 60px 60px;
+    background-position: left 5px top -6px;
+
+    font-family: "win95";
+    font-size: 20px;
+    padding-top: 3.5px;
+  }
+  .startmenu .shutdownbtn:hover {
+    background-color: #0000AA;
+}
+
+.errorbox {
+  position: absolute;
+  z-index: 991;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 160px;
+
+  background-color: #C0C0C0;
+
+  border: 2px solid #cacfcf ;
+  border-color: #cacfcf;
+  border-width: 2px;
+  border-top-width: 3px;
+  border-left-width: 3px;
+  border-top-color: #F5FFFF;
+  border-left-color: #F5FFFF;
+
+  font-family: "win95";
+  font-size: 20px;
+  word-wrap: break-word;
+  }
+  .errorbox .titlebar {
+    position: absolute;
+    z-index: 992;
+    top: 7.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 25px;
+
+    background-color: #0000AA;
+    
+    color: white;
+  }
+  .errorbox .titlebar .title {
+    position: absolute;
+    z-index: 993;
+    top: 66%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 25px;
+  }
+  .errorbox .titlebar .closebtn {
+    position: absolute;
+    z-index: 993;
+    top: 49.9%;
+    left: 97.3%;
+    transform: translate(-50%, -50%);
+    width: 22px;
+    height: 22px;
+
+    border-width: 0.5px;
+
+    background-image: url('../IMG/close.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+  }
+  .errorbox .content .icon {
+    position: absolute;
+    z-index: 992;
+    top: 38%;
+    left: 8%;
+    transform: translate(-50%, -50%);
+    width: 55px;
+    height: 55px;
+
+    background-image: url('../IMG/error.png');
+    background-repeat: no-repeat;
+    background-size: 55px 55px;
+  }
+  .errorbox .content .errortxt {
+    position: absolute;
+    z-index: 992;
+    top: 42%;
+    left: 59%;
+    transform: translate(-50%, -50%);
+    width: 410px;
+    height: 55px;
+  }
+  .errorbox .exitbtn {
+    position: absolute;
+    z-index: 992;
+    top: 85%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 30px;
+
+    background-color: #C0C0C0;
+
+    background-color: #BFBFBF;
+    border-left-color: #F5FFFF;
+    border-top-color: #F5FFFF;
+
+    font-family: "win95";
+    font-size: 21px;
+    padding-top: 3px;
+  }
+  .errorbox .nobtn {
+    position: absolute;
+    z-index: 992;
+    top: 85%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 30px;
+
+    background-color: #C0C0C0;
+
+    background-color: #BFBFBF;
+    border-left-color: #F5FFFF;
+    border-top-color: #F5FFFF;
+
+    font-family: "win95";
+    font-size: 21px;
+    padding-top: 3px;
+}
