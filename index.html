@@ -10,8 +10,9 @@
     <link rel="icon" type="image/x-icon" href="https://findicons.com/files/icons/2779/simple_icons/128/github_128_black.png">
     <!-- Import css -->
     <link rel="stylesheet" #type="text/css" href="./CSS/style.css" onload="this.media='all'">
+    <link rel="stylesheet" #type="text/css" href="./CSS/desktop.css" onload="this.media='all'">
     <link rel="stylesheet" #type="text/css" href="./CSS/misc.css">
-    <link rel="stylesheet" #type="text/css" href="./CSS/desktop.css">
+    <link rel="stylesheet" #type="text/css" href="./CSS/windows.css">
     <!-- Link preview -->
     <head>
         <meta property="og:image" content="https://avatars.githubusercontent.com/u/81589649?v=4?w=200" />
@@ -21,6 +22,7 @@
         <meta property="og:description" content="click this link and read/see more about me here." />
     </head>
     <!-------------------------------------------------------------------------------------------------->
+
     <!-- misc elements -->
     <body>
         <div class="menubar">
@@ -58,16 +60,21 @@
             <button class="recycle-bin-ico" id="recycle_bin_ico">
                 <p class="txt" id="recycle_bin_txt">Recycle Bin</p>
             </button>
+            <button class="about-me-ico" id="about_me_ico">
+                <p class="txt" id="about_me_txt">About Me</p>
+            </button>
         </div>
 
         <!-- apps (windows) -->
+        <!-- Recycle Bin -->
         <div class="recycle-bin" id="recycle-bin" style="display: none;">
             <div class="resizehandle"></div>
-            <div class="recycle_bin_titlebar" id="recycle_bin_titlebar">
-                <div class="recycle_bin_title" id="recyclebintitle">Recycle Bin</div>
-                <button class="recycle_bin_closebtn" id="recycle_bin_closebtn"></button>
+            <div class="titlebar" id="recycle_bin_titlebar">
+                <div class="title_ico"></div>
+                <div class="title" id="recyclebintitle">Recycle Bin</div>
+                <button class="closebtn" id="recycle_bin_closebtn"></button>
             </div>
-            <div class="recycle-bin-container">
+            <div class="container">
                 <div class="categories">
                     <p>Name</p>
                     <p>Original Location</p>
@@ -89,6 +96,34 @@
                         <p style="margin-left: 20px;">700 b...</p>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- About Me (.TXT) -->
+        <div class="about-me" id="about-me">
+            <div class="resizehandle"></div>
+            <div class="titlebar" id="about_me_titlebar">
+                <div class="title_ico"></div>
+                <div class="title" id="aboutmetitle">About Me - Notepad</div>
+                <button class="closebtn" id="about_me_closebtn"></button>
+            </div>
+            <div class="container">
+                <div class="bar-top"></div>
+                <div class="bar-left"></div>
+                <div class="bar-right"></div>
+                <div class="bar-bottom"></div>
+                <p class="text" contenteditable="true">
+                    <strong class="title_txt">Hello, it's me cookie0_o!</strong><br>
+                    Thank you for visiting my personal site. <br>
+                    I love programming and have been writing code for about 2 years now. <br>
+                    I started with my current favorite programming language, Python! <br>
+                    I also know a bit of Lua, a bit of JavaScript, and HTML/CSS. <br>
+                    Though HTML/CSS isn't really a programming language. <br>
+                    But enough about that, my socials are in "Socials.txt" if you need them. <br>
+                    <br>
+                    But really, thanks for visiting! So stay a bit and explore this CSS nightmare. :) <br>
+                    <br>
+                    - cookie0_o
+                </p>
             </div>
         </div>
     </body>

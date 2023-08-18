@@ -11,6 +11,7 @@ var closebtn_exitmsg = document.getElementById('closebtn');
 var exitbtn_exitmsg = document.getElementById('exitbtn');
 var nobtn_exitmsg = document.getElementById('nobtn');
 
+
 // generate a random string with a given length
 function RandomString(length) {
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
