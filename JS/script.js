@@ -6,7 +6,6 @@ const startmenu = document.getElementById('startmenu');
 const shutdownbtn = document.getElementById('shutdownbtn');
 
 // msg box buttons
-var errorbox = document.getElementById("errorbox")
 var closebtn_exitmsg = document.getElementById('closebtn');
 var exitbtn_exitmsg = document.getElementById('exitbtn');
 var nobtn_exitmsg = document.getElementById('nobtn');
@@ -28,47 +27,6 @@ function RandomString(length) {
 function sleep(milliseconds) {
   return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
-
-// make a window draggable
-function dragElement(elmnt, titlebar) {
-  let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-
-  if (document.getElementById(titlebar.id + "header")) {
-    document.getElementById(titlebar.id + "header").onmousedown = dragMouseDown;
-  } else {
-    titlebar.onmousedown = dragMouseDown;
-  }
-
-  function dragMouseDown(e) {
-    e = e || window;
-    e.preventDefault();
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    document.onmousemove = elementDrag;
-
-    titlebar.style.cursor = 'grabbing';
-  }
-
-  function elementDrag(e) {
-    e = e || window;
-    e.preventDefault();
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-
-  function closeDragElement() {
-    document.onmouseup = null;
-    document.onmousemove = null;
-
-    titlebar.style.cursor = 'grab';
-  }
-}
-dragElement(errorbox, document.getElementById("titlebar"));
 
 
 // calendar element

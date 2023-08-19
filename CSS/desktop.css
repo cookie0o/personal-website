@@ -60,3 +60,32 @@
   color: white;
 }
 
+/* Socials (.TXT) */
+.desktop .socials-ico {
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  top: 250px;
+
+  left: 3px;
+
+  background-color: transparent;
+  border: 0px;
+
+  background-image: url('../IMG/ico/online_file.png');
+  background-repeat: no-repeat;
+  background-position: 25px center;
+  background-size: 60px 60px;
+
+  text-align: center;
+} .desktop .socials-ico .txt {
+  position: absolute;
+  top: 62px;
+
+  width: 98px;
+
+  font-family: "win95";
+  font-size: 18px;
+  color: white;
+}
+

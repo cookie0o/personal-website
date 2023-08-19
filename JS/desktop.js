@@ -1,5 +1,6 @@
 // elements
 const titlebars = document.querySelectorAll('.titlebar');
+const errorbox = document.getElementById("errorbox")
 
 const Recycle_Bin = document.getElementById('recycle-bin');
   const recycle_bin_titlebar = document.getElementById('recycle_bin_titlebar');
@@ -13,6 +14,11 @@ const About_Me = document.getElementById('about-me');
   const About_Me_TXT = document.getElementById('about_me_txt');
   const About_Me_closebtn = document.getElementById('about_me_closebtn');
 
+const Socials = document.getElementById('socials');
+  const socials_titlebar = document.getElementById('socials_titlebar');
+  const Socials_ICO = document.getElementById('socials_ico');
+  const Socials_TXT = document.getElementById('socials_txt');
+  const Socials_closebtn = document.getElementById('socials_closebtn');
 
 // make a window draggable
 function dragElement_windows(window, titlebar) {
@@ -55,6 +61,8 @@ function dragElement_windows(window, titlebar) {
 }
 dragElement_windows(Recycle_Bin, document.getElementById("recycle_bin_titlebar"));
 dragElement_windows(About_Me, document.getElementById("about_me_titlebar"));
+dragElement_windows(Socials, document.getElementById("socials_titlebar"));
+dragElement_windows(errorbox, document.getElementById("titlebar"));
 
 // change z index of clicked windows
 const titlebarIds = ['recycle-bin', 'about-me'];
@@ -136,6 +144,18 @@ function stopResize() {
   document.removeEventListener('mousemove', startResize);
   document.removeEventListener('mouseup', stopResize);
 }
+// check is something else is clicked and reset selection
+document.addEventListener('click', function(event) {
+  const clickedElement_recyclebin = event.target;
+  // Check if the clicked element is not the excluded element (About_Me_ICO)
+  if (clickedElement_recyclebin !== Recycle_Bin_ICO) {
+    // reset selection and reset style
+    Recycle_Bin_TXT.style.border = "none";
+    Recycle_Bin_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
+    isWaiting = false;
+  }
+});
+
 
 
 // About Me
@@ -198,3 +218,88 @@ function stopResize_aboutme() {
   document.removeEventListener('mousemove', startResize_aboutme);
   document.removeEventListener('mouseup', stopResize_aboutme);
 }
+// check is something else is clicked and reset selection
+document.addEventListener('click', function(event) {
+  const clickedElement_aboutme = event.target;
+  // Check if the clicked element is not the excluded element (About_Me_ICO)
+  if (clickedElement_aboutme !== About_Me_ICO) {
+    // reset selection and reset style
+    About_Me_TXT.style.border = "none";
+    About_Me_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
+    isWaiting_aboutme = false;
+  }
+});
+
+
+
+// Socials
+let lastClickTime_socials = 0;
+let isWaiting_socials = false;
+Socials_ICO.addEventListener("click", function() {
+  const currentTime = new Date().getTime();
+  // run second function if clicked again within 700ms
+  if (currentTime - lastClickTime_socials <= 600 && !isWaiting_socials) {
+    // remove selection
+    Socials_TXT.style.border = "none";
+    Socials_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
+    // open win
+    Socials.style.display = 'block';
+    
+    // reset
+    isWaiting_socials = true;
+    // simulate waiting for 700ms and then reset isWaiting_socials
+    setTimeout(function() {
+      isWaiting_socials = false;
+    }, 700);
+  } else {
+    // show that the app is selected
+    Socials_TXT.style.border = "1px dotted white";
+    Socials_TXT.style.background = "linear-gradient(rgba(0, 0, 170, 0.5), rgba(0, 0, 170, 0.5))";
+  }
+  lastClickTime_socials = currentTime;
+});
+function Socials_close() {
+  // hide app window
+  Socials.style.display = 'none';
+};
+Socials_closebtn.addEventListener('click', () => {
+  Socials_close();
+});
+// make Recycle bin window Socials
+const resizeHandle_socials = Socials.querySelector('.resizehandle');
+resizeHandle_socials.addEventListener('mousedown', initializeResize_socials);
+function initializeResize_socials(e) {
+  e.preventDefault();
+
+  document.addEventListener('mousemove', startResize_socials);
+  document.addEventListener('mouseup', stopResize_socials);
+}
+function startResize_socials(e) {
+  const newWidth = e.clientX - Socials.getBoundingClientRect().left;
+  const newHeight = e.clientY - Socials.getBoundingClientRect().top;
+
+  // Limit minimum and maximum width and height
+  const limitedWidth_socials = Math.max(300, newWidth);
+  const limitedHeight_socials = Math.max(170, newHeight);
+
+  Socials.style.width = `${limitedWidth_socials}px`;
+  Socials.style.height = `${limitedHeight_socials}px`;
+
+  // Update title bar position based on new width
+  socials_titlebar.style.width = `${limitedWidth_socials}px`;
+}
+function stopResize_socials() {
+  document.removeEventListener('mousemove', startResize_socials);
+  document.removeEventListener('mouseup', stopResize_socials);
+}
+// check is something else is clicked and reset selection
+document.addEventListener('click', function(event) {
+  const clickedElement_socials = event.target;
+  // Check if the clicked element is not the excluded element (Socials_ICO)
+  if (clickedElement_socials !== Socials_ICO) {
+    // reset selection and reset style
+    Socials_TXT.style.border = "none";
+    Socials_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
+    isWaiting_socials = false;
+  }
+});
