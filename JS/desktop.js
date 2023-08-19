@@ -65,7 +65,7 @@ dragElement_windows(Socials, document.getElementById("socials_titlebar"));
 dragElement_windows(errorbox, document.getElementById("titlebar"));
 
 // change z index of clicked windows
-const titlebarIds = ['recycle-bin', 'about-me'];
+const titlebarIds = ['recycle-bin', 'about-me', "socials"];
 const zindexInactive = 991;
 const zindexActive = 992;
 
