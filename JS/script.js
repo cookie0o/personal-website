@@ -125,3 +125,37 @@ exitbtn_exitmsg.addEventListener('mouseleave', () => {
 shutdownbtn.addEventListener('click', () => {
   exitmsg_open("Do you?", "Do you want to exit this website?");
 });
+
+
+// Function to get a random number between 1 and numImages
+function getRandomImageNumber() {
+    return Math.floor(Math.random() * numImages) + 1;
+}
+
+// Function to change the random image and adjust its height
+window.onload = function() {
+  var random = Math.floor(Math.random() * 3) + 1;
+  var bg = "./IMG/memes/" + random + ".jpg";
+
+  var lastbg = localStorage.getItem("lastbg");
+  if (lastbg == bg) {
+      random = Math.floor(Math.random() * 3) + 1;
+      bg = "./IMG/memes/" + random + ".jpg";
+  }
+
+  // Create a new Image object to load the image
+  var image = new Image();
+
+  // Set the source of the image
+  image.src = bg;
+
+  // Wait for the image to load
+  image.onload = function() {
+    // Apply the background to the random-image div
+    const randomwindow = document.getElementById("random");
+    const randomImage = document.getElementById("random-image");
+
+    randomImage.style.backgroundImage = "url('" + bg + "')";
+    randomwindow.style.height = image.naturalHeight + 50 + "px";
+  };
+};

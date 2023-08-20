@@ -20,6 +20,8 @@ const Socials = document.getElementById('socials');
   const Socials_TXT = document.getElementById('socials_txt');
   const Socials_closebtn = document.getElementById('socials_closebtn');
 
+const random = document.getElementById('random');
+
 // make a window draggable
 function dragElement_windows(window, titlebar) {
   let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -62,6 +64,7 @@ function dragElement_windows(window, titlebar) {
 dragElement_windows(Recycle_Bin, document.getElementById("recycle_bin_titlebar"));
 dragElement_windows(About_Me, document.getElementById("about_me_titlebar"));
 dragElement_windows(Socials, document.getElementById("socials_titlebar"));
+dragElement_windows(random, document.getElementById("random_titlebar"));
 dragElement_windows(errorbox, document.getElementById("titlebar"));
 
 // change z index of clicked windows
