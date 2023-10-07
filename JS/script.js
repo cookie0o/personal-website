@@ -134,12 +134,12 @@ function getRandomImageNumber() {
 
 // Function to change the random image and adjust its height
 window.onload = function() {
-  var random = Math.floor(Math.random() * 3) + 1;
+  var random = Math.floor(Math.random() * 2) + 1;
   var bg = "./IMG/memes/" + random + ".jpg";
 
   var lastbg = localStorage.getItem("lastbg");
   if (lastbg == bg) {
-      random = Math.floor(Math.random() * 3) + 1;
+      random = Math.floor(Math.random() * 2) + 1;
       bg = "./IMG/memes/" + random + ".jpg";
   }
 

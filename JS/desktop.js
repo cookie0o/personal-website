@@ -283,7 +283,7 @@ function startResize_socials(e) {
 
   // Limit minimum and maximum width and height
   const limitedWidth_socials = Math.max(300, newWidth);
-  const limitedHeight_socials = Math.max(170, newHeight);
+  const limitedHeight_socials = Math.max(135, newHeight);
 
   Socials.style.width = `${limitedWidth_socials}px`;
   Socials.style.height = `${limitedHeight_socials}px`;
