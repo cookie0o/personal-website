@@ -10,6 +10,7 @@ var closebtn_exitmsg = document.getElementById('closebtn');
 var exitbtn_exitmsg = document.getElementById('exitbtn');
 var nobtn_exitmsg = document.getElementById('nobtn');
 
+var userLanguage
 
 // generate a random string with a given length
 function RandomString(length) {
@@ -105,12 +106,17 @@ async function  changetext() {
   // change text color to red
   exitbtn_exitmsg.style.color = "red";
   // Set 4 times a random string with a delay of 300 milliseconds
-    for (let i = 0; i < 4; i++) {
-      exitbtn_exitmsg.textContent = RandomString(4);
-      await sleep(25);
+  for (let i = 0; i < 4; i++) {
+    exitbtn_exitmsg.textContent = RandomString(4);
+    await sleep(25);
   }
   // set text to "no" instead of "exit"
-  exitbtn_exitmsg.textContent = "No";
+  userLanguage = navigator.language.toLowerCase();
+  if (userLanguage != "de-de") {
+    exitbtn_exitmsg.textContent = "No";
+  } else {
+    exitbtn_exitmsg.textContent = "Nein";
+  }
 }
 
 // detect if the yes button is hovered an change it
@@ -123,7 +129,12 @@ exitbtn_exitmsg.addEventListener('mouseleave', () => {
 });
 
 shutdownbtn.addEventListener('click', () => {
-  exitmsg_open("Do you?", "Do you want to exit this website?");
+  userLanguage = navigator.language.toLowerCase();
+  if (userLanguage != "de-de") {
+    exitmsg_open("Do you?", "Do you want to exit this website?");
+  }else {
+    exitmsg_open("Möchten Sie?", "Möchten Sie diese Website verlassen?");
+  }
 });
 
 
