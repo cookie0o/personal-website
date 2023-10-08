@@ -2,13 +2,16 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-    var userLanguage =  navigator.language.toLowerCase();
-    const supportedLanguages = ["en-en", "de-de"]; // supported languages
+    var userLanguage = navigator.language.toLowerCase();
+    const supportedLanguages = ["en-en", "de-de", "de", "en"]; // supported languages
 
     // Check if the user's language is supported
     if (supportedLanguages.includes(userLanguage)) {
-        // language found redirect
-        userLanguage = userLanguage.split("-")[0].trim();
+        // strip the string
+        if (userLanguage.includes("-")) {
+          userLanguage = userLanguage.split("-")[0].trim();
+        }
+        // redirect
         window.location.href = `index_${userLanguage}.html`;
     } else {
         // Fallback to English
