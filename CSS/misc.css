@@ -1,32 +1,32 @@
 .line {
   position: absolute;
-  left: 42px;
+  left: 44px;
   bottom: 57px;
   
   background-image: url('../IMG/line.png');
   background-repeat: no-repeat;
   
-  width: 226px;
+  width: 224px;
   height: 7px;
 }
 
 .menubar {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: -20px;
 
     z-index: 999;
 
-    width: 100vw;
+    width: calc(100vw + 100px);
     height: 40px;
     background-color: #C0C0C0;
   }
   .menubar .top {
     position: absolute;
     bottom: 40;
-    left: 0;
+    left: -20px;
 
-    width: 100vw;
+    width: calc(100vw + 100px);
     height: 3px;
     background-color: #F5FFFF;
   }
@@ -34,7 +34,7 @@
   .menubar .startbtn {
     position: absolute;
     bottom: 4px;
-    left: 4px;
+    left: 24px;
 
     width: 70px;
     height: 30px;
@@ -57,7 +57,7 @@
   .menubar .calendar {
     position: absolute;
     bottom: 4px;
-    right: 4px;
+    right: 84px;
 
     width: 80px;
     height: 30px;
@@ -84,6 +84,8 @@
   width: 270px;
   height: 400px;
 
+  z-index: 999;
+
   background-color: #C0C0C0;
 
   border: 2px solid black ;
@@ -106,8 +108,8 @@
   .startmenu .shutdownbtn {
     position: absolute;
     bottom: 2px;
-    left: 42px;
-    width: 226px;
+    left: 44px;
+    width: 224px;
     height: 48px;
 
     border: none;

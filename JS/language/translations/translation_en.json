@@ -1,0 +1,30 @@
+{
+    "startbtn"       : "Start",
+    "shutdownbtn"    : "Shut down...",
+    "errortitle"     : "Error",
+    "errortxt"       : "Do you want to exit this website?",
+    "exitbtn"        : "Exit",
+    "nobtn"          : "No",
+
+    "recycle_bin_txt": "Recycle Bin",
+    "about_me_txt"   : "About Me",
+    "socialstitle"   : "Socials",
+    "socials_txt"    : "Socials",
+    "randomtitle"    : "Random",
+
+    "recyclebintitle": "Recycle Bin",
+    "categorie1"     : "Name",
+    "categorie2"     : "Original Location",
+    "categorie3"     : "Date Deleted",
+    "categorie4"     : "Type",
+    "infobar1"       : "1 object(s)",
+    "infobar2"       : "0.7KB",
+    "deleteditems1"  : "money.txt",
+    "deleteditems2"  : "C:/Documents",
+    "deleteditems3"  : "15/8/23 7:39 PM",
+    "deleteditems4"  : "Text Document",
+    "deleteditems5"  : "700 b...",
+
+    "aboutmetitle"   : "About Me - Notepad",
+    "text"           : "<strong class='title_txt'>Hi!</strong><br><br>Thank you for visiting my personal site,<br>I love programming, and I have been writing code for about 2 years now.<br>I started with my current favorite programming language, Python!<br>I also know a bit of Lua, a bit of JavaScript, and HTML/CSS.<br>Though HTML/CSS isn't really a programming language.<br><br><br>- Raphael."
+}

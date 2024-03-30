@@ -361,7 +361,7 @@ a:visited {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
+  width: 330px;
   height: 135px;
 
   border: 2px solid #9a9c9c ;
@@ -382,7 +382,7 @@ a:visited {
     position: absolute;
     top: 0;
     left: 0;
-    width: 300px;
+    width: 330px;
     height: 25px;
   
     background-color: #0000AA;
