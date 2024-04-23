@@ -354,7 +354,7 @@ a:visited {
 }
 
 
-/* Socials (.TXT) */
+/* Socials */
 .socials {
   position: absolute;
   z-index: 991;
@@ -412,7 +412,7 @@ a:visited {
 
     padding-left: 20px;
   }
-  /* Socials (.TXT) insides */
+  /* Socials insides */
   .socials .container {
     width: 100%;
     height: 100%;
@@ -488,4 +488,101 @@ a:visited {
 
         width: 27px;
         height: 27px;
+}
+
+
+/* Guest Book */
+.guest-book {
+  position: absolute;
+  z-index: 991;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 300px;
+
+  border: 2px solid #9a9c9c ;
+  border-color: #9a9c9c;
+  border-width: 2px;
+  border-top-width: 3px;
+  border-left-width: 3px;
+  border-top-color: #F5FFFF;
+  border-left-color: #F5FFFF;
+
+  font-family: "win95";
+  font-size: 20px;
+  word-wrap: break-word;
+
+  background-color: #C0C0C0;
+  }
+  .guest-book .titlebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 550px;
+    height: 25px;
+  
+    background-color: #0000AA;
+    
+    color: white;
+  }
+  .guest-book .title_ico {
+    position: absolute;
+    z-index: 993;
+    top: 3px;
+    left: 4px;
+
+    width: 22px;
+    height: 22px;
+
+    background-image: url('../IMG/ico/block.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+  }
+  .guest-book .titlebar .title {
+    position: absolute;
+    z-index: 993;
+    top: 5px;
+    left: 5px;
+    width: 500px;
+    height: 25px;
+
+    padding-left: 20px;
+  }
+  /* Guest Book insides */
+  .guest-book .container {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+    background-color: lightgray;
+    }
+    .guest-book .container .link-bar {
+      margin-top: 30px;
+      }
+      .guest-book .container .link {
+        padding-top: 5px;
+        color: darkblue;
+        text-decoration: none;
+      }
+      .guest-book .container .bar {
+        height: 2px;
+        width: 100%;
+        background-color: black;
+    }
+    .guest-book .container .iframe {
+      margin-top: 0px;
+      border: none;
+
+      width: 100%;
+      height: calc(100% + 15px);
+
+      /* make the size smaller */
+      width: 76.92% !important;
+      height: 76.92% !important;
+      -webkit-transform: scale(1.3);
+      transform: scale(1.3);
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
 }

@@ -20,7 +20,16 @@ const Socials = document.getElementById('socials');
   const Socials_TXT = document.getElementById('socials_txt');
   const Socials_closebtn = document.getElementById('socials_closebtn');
 
+const Guest_Book = document.getElementById('guest-book');
+  const guest_book_titlebar = document.getElementById('guest_book_titlebar');
+  const Guest_Book_ICO = document.getElementById('guest_book_ico');
+  const Guest_Book_TXT = document.getElementById('guest_book_txt');
+  const Guest_Book_closebtn = document.getElementById('guest_book_closebtn');
+
 const random = document.getElementById('random');
+
+
+const titlebarIds = ['recycle-bin', 'about-me', "socials", "guest-book"];
 
 // make a window draggable
 function dragElement_windows(window, titlebar) {
@@ -61,14 +70,14 @@ function dragElement_windows(window, titlebar) {
     titlebar.style.cursor = 'grab';
   }
 }
+dragElement_windows(errorbox, document.getElementById("titlebar"));
+dragElement_windows(random, document.getElementById("random_titlebar"));
 dragElement_windows(Recycle_Bin, document.getElementById("recycle_bin_titlebar"));
 dragElement_windows(About_Me, document.getElementById("about_me_titlebar"));
 dragElement_windows(Socials, document.getElementById("socials_titlebar"));
-dragElement_windows(random, document.getElementById("random_titlebar"));
-dragElement_windows(errorbox, document.getElementById("titlebar"));
+dragElement_windows(Guest_Book, document.getElementById("guest_book_titlebar"));
 
 // change z index of clicked windows
-const titlebarIds = ['recycle-bin', 'about-me', "socials"];
 const zindexInactive = 991;
 const zindexActive = 992;
 
@@ -268,7 +277,7 @@ function Socials_close() {
 Socials_closebtn.addEventListener('click', () => {
   Socials_close();
 });
-// make Recycle bin window Socials
+// make Socials window
 const resizeHandle_socials = Socials.querySelector('.resizehandle');
 resizeHandle_socials.addEventListener('mousedown', initializeResize_socials);
 function initializeResize_socials(e) {
@@ -304,5 +313,82 @@ document.addEventListener('click', function(event) {
     Socials_TXT.style.border = "none";
     Socials_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
     isWaiting_socials = false;
+  }
+});
+
+
+
+// Guest Book
+let lastClickTime_guest_book = 0;
+let isWaiting_guest_book = false;
+Guest_Book_ICO.addEventListener("click", function() {
+  const currentTime = new Date().getTime();
+  // run second function if clicked again within 700ms
+  if (currentTime - lastClickTime_guest_book <= 600 && !isWaiting_guest_book) {
+    // remove selection
+    Guest_Book_TXT.style.border = "none";
+    Guest_Book_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
+    
+    // load the website (only now else it will load even when not open)
+    document.getElementById("guest_book_iframe").src = "http://users2.smartgb.com/g/g.php?a=s&i=g26-39561-09"
+    // open win
+    Guest_Book.style.display = 'block';
+    
+    // reset
+    isWaiting_guest_book = true;
+    // simulate waiting for 700ms and then reset isWaiting_guest_book
+    setTimeout(function() {
+      isWaiting_guest_book = false;
+    }, 700);
+  } else {
+    // show that the app is selected
+    Guest_Book_TXT.style.border = "1px dotted white";
+    Guest_Book_TXT.style.background = "linear-gradient(rgba(0, 0, 170, 0.5), rgba(0, 0, 170, 0.5))";
+  }
+  lastClickTime_guest_book = currentTime;
+});
+function Guest_Book_close() {
+  // hide app window
+  Guest_Book.style.display = 'none';
+};
+Guest_Book_closebtn.addEventListener('click', () => {
+  Guest_Book_close();
+});
+// make Guest Book window
+const resizeHandle_guest_book = Guest_Book.querySelector('.resizehandle');
+resizeHandle_guest_book.addEventListener('mousedown', initializeResize_guest_book);
+function initializeResize_guest_book(e) {
+  e.preventDefault();
+
+  document.addEventListener('mousemove', startResize_guest_book);
+  document.addEventListener('mouseup', stopResize_guest_book);
+}
+function startResize_guest_book(e) {
+  const newWidth = e.clientX - Guest_Book.getBoundingClientRect().left;
+  const newHeight = e.clientY - Guest_Book.getBoundingClientRect().top;
+
+  // Limit minimum and maximum width and height
+  const limitedWidth_guest_book = Math.max(300, newWidth);
+  const limitedHeight_guest_book = Math.max(200, newHeight);
+
+  Guest_Book.style.width = `${limitedWidth_guest_book}px`;
+  Guest_Book.style.height = `${limitedHeight_guest_book}px`;
+
+  // Update title bar position based on new width
+  guest_book_titlebar.style.width = `${limitedWidth_guest_book}px`;
+}
+function stopResize_guest_book() {
+  document.removeEventListener('mousemove', startResize_guest_book);
+  document.removeEventListener('mouseup', stopResize_guest_book);
+}
+// check is something else is clicked and reset selection
+document.addEventListener('click', function(event) {
+  const clickedElement_guest_book = event.target;
+  // Check if the clicked element is not the excluded element (GuestBook_ICO)
+  if (clickedElement_guest_book !== Guest_Book_ICO) {
+    // reset selection and reset style
+    Guest_Book_TXT.style.border = "none";
+    Guest_Book_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
+    isWaiting_guest_book = false;
   }
 });

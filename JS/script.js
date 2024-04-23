@@ -80,10 +80,6 @@ function exitmsg_open(title, message) {
   // get values
   var divTitle = document.getElementById("errortitle");
   var divContent = document.getElementById("errortxt");
-
-  // change values
-  divTitle.textContent = title;
-  divContent.textContent = message;
    
   // show msg box
   errorbox.style.display = 'block';
@@ -110,13 +106,6 @@ async function  changetext() {
     exitbtn_exitmsg.textContent = RandomString(4);
     await sleep(25);
   }
-  // set text to "no" instead of "exit"
-  userLanguage = navigator.language.toLowerCase();
-  if (userLanguage != "de-de") {
-    exitbtn_exitmsg.textContent = "No";
-  } else {
-    exitbtn_exitmsg.textContent = "Nein";
-  }
 }
 
 // detect if the yes button is hovered an change it
@@ -129,12 +118,7 @@ exitbtn_exitmsg.addEventListener('mouseleave', () => {
 });
 
 shutdownbtn.addEventListener('click', () => {
-  userLanguage = navigator.language.toLowerCase();
-  if (userLanguage != "de-de") {
-    exitmsg_open("Do you?", "Do you want to exit this website?");
-  }else {
-    exitmsg_open("Möchten Sie?", "Möchten Sie diese Website verlassen?");
-  }
+  exitmsg_open();
 });
 
 

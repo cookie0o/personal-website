@@ -28,9 +28,11 @@ function updateContent(translation, language) {
         document.getElementById('recycle_bin_txt').innerText = translation[language].recycle_bin_txt;
         document.getElementById('about_me_txt').innerText = translation[language].about_me_txt;
         document.getElementById('socials_txt').innerText = translation[language].socials_txt;
+        document.getElementById('guest_book_txt').innerText = translation[language].guest_book_txt;
+        // apps (windows)
+        // other titles
         document.getElementById('socialstitle').innerText = translation[language].socialstitle;
         document.getElementById('randomtitle').innerText = translation[language].randomtitle;
-        // apps (windows)
         // Recycle Bin
         document.getElementById('recyclebintitle').innerText = translation[language].recyclebintitle;
         document.getElementById('categorie1').innerText = translation[language].categorie1;

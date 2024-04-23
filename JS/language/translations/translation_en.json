@@ -8,8 +8,10 @@
 
     "recycle_bin_txt": "Recycle Bin",
     "about_me_txt"   : "About Me",
-    "socialstitle"   : "Socials",
     "socials_txt"    : "Socials",
+    "guest_book_txt" : "Guest Book",
+
+    "socialstitle"   : "Socials",
     "randomtitle"    : "Random",
 
     "recyclebintitle": "Recycle Bin",
