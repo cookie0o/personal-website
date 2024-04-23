@@ -33,6 +33,7 @@ function updateContent(translation, language) {
         // other titles
         document.getElementById('socialstitle').innerText = translation[language].socialstitle;
         document.getElementById('randomtitle').innerText = translation[language].randomtitle;
+        document.getElementById('guestbooktitle').innerText = translation[language].guestbooktitle;
         // Recycle Bin
         document.getElementById('recyclebintitle').innerText = translation[language].recyclebintitle;
         document.getElementById('categorie1').innerText = translation[language].categorie1;
