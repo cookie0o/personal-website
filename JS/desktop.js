@@ -330,7 +330,7 @@ Guest_Book_ICO.addEventListener("click", function() {
     Guest_Book_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
     
     // load the website (only now else it will load even when not open)
-    document.getElementById("guest_book_iframe").src = "http://users2.smartgb.com/g/g.php?a=s&i=g26-39561-09"
+    document.getElementById("guest_book_iframe").src = "https://users2.smartgb.com/g/g.php?a=s&i=g26-39561-09"
     // open win
     Guest_Book.style.display = 'block';
     
