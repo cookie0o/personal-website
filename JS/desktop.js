@@ -94,10 +94,51 @@ titlebarIds.forEach(id => {
 });
 
 
-
-// Recycle Bin
 let lastClickTime = 0;
 let isWaiting = false;
+
+// functions
+function window_close(window) {
+  // hide app window
+  window.style.display = 'none';
+};
+
+function initializeResize(window, maxW = 20, maxH = 20, minW) {
+  return function (e) {
+    e.preventDefault();
+    
+    function startResize(e) {
+      const newWidth = e.clientX - window.getBoundingClientRect().left;
+      const newHeight = e.clientY - window.getBoundingClientRect().top;
+
+      var limitedWidth
+
+      if (minW != null) {
+        limitedWidth = Math.max(maxW, Math.min(minW, newWidth));
+      } else {
+        limitedWidth = Math.max(maxW, newWidth);
+      }
+      const limitedHeight = Math.max(maxH, newHeight);
+
+      window.style.width = `${limitedWidth}px`;
+      window.style.height = `${limitedHeight}px`;
+      window.querySelector('.titlebar').style.width = `${limitedWidth}px`;
+    }
+
+    function stopResize() {
+      document.removeEventListener('mousemove', startResize);
+      document.removeEventListener('mouseup', stopResize);
+    }
+
+    document.addEventListener('mousemove', startResize);
+    document.addEventListener('mouseup', stopResize);
+  };
+}
+
+
+
+
+// Recycle Bin
 Recycle_Bin_ICO.addEventListener("click", function() {
   const currentTime = new Date().getTime();
   // run second function if clicked again within 700ms
@@ -122,40 +163,11 @@ Recycle_Bin_ICO.addEventListener("click", function() {
 
   lastClickTime = currentTime;
 });
-function Recycle_Bin_close() {
-  // hide app window
-  Recycle_Bin.style.display = 'none';
-};
-Recycle_Bin_closebtn.addEventListener('click', () => {
-  Recycle_Bin_close();
-});
-// make Recycle bin window Recycle_Bin
-const resizeHandle = Recycle_Bin.querySelector('.resizehandle');
-resizeHandle.addEventListener('mousedown', initializeResize);
-function initializeResize(e) {
-  e.preventDefault();
 
-  document.addEventListener('mousemove', startResize);
-  document.addEventListener('mouseup', stopResize);
-}
-function startResize(e) {
-  const newWidth = e.clientX - Recycle_Bin.getBoundingClientRect().left;
-  const newHeight = e.clientY - Recycle_Bin.getBoundingClientRect().top;
+Recycle_Bin_closebtn.addEventListener('click', () => {window_close(Recycle_Bin)});
+// make window
+Recycle_Bin.querySelector('.resizehandle').addEventListener('mousedown', initializeResize(Recycle_Bin, 593, 200, 593));
 
-  // Limit minimum and maximum width and height
-  const limitedWidth = Math.max(593, Math.min(593, newWidth));
-  const limitedHeight = Math.max(200, newHeight);
-
-  Recycle_Bin.style.width = `${limitedWidth}px`;
-  Recycle_Bin.style.height = `${limitedHeight}px`;
-
-  // Update title bar position based on new width
-  recycle_bin_titlebar.style.width = `${limitedWidth}px`;
-}
-function stopResize() {
-  document.removeEventListener('mousemove', startResize);
-  document.removeEventListener('mouseup', stopResize);
-}
 // check is something else is clicked and reset selection
 document.addEventListener('click', function(event) {
   const clickedElement_recyclebin = event.target;
@@ -171,12 +183,10 @@ document.addEventListener('click', function(event) {
 
 
 // About Me
-let lastClickTime_aboutme = 0;
-let isWaiting_aboutme = false;
 About_Me_ICO.addEventListener("click", function() {
   const currentTime = new Date().getTime();
   // run second function if clicked again within 700ms
-  if (currentTime - lastClickTime_aboutme <= 600 && !isWaiting_aboutme) {
+  if (currentTime - lastClickTime <= 600 && !isWaiting) {
     // remove selection
     About_Me_TXT.style.border = "none";
     About_Me_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
@@ -184,52 +194,24 @@ About_Me_ICO.addEventListener("click", function() {
     About_Me.style.display = 'block';
     
     // reset
-    isWaiting_aboutme = true;
-    // simulate waiting for 700ms and then reset isWaiting_aboutme
+    isWaiting = true;
+    // simulate waiting for 700ms and then reset isWaiting
     setTimeout(function() {
-      isWaiting_aboutme = false;
+      isWaiting = false;
     }, 700);
   } else {
     // show that the app is selected
     About_Me_TXT.style.border = "1px dotted white";
     About_Me_TXT.style.background = "linear-gradient(rgba(0, 0, 170, 0.5), rgba(0, 0, 170, 0.5))";
   }
-  lastClickTime_aboutme = currentTime;
+
+  lastClickTime = currentTime;
 });
-function About_Me_close() {
-  // hide app window
-  About_Me.style.display = 'none';
-};
-About_Me_closebtn.addEventListener('click', () => {
-  About_Me_close();
-});
-// make Recycle bin window About_Me
-const resizeHandle_aboutme = About_Me.querySelector('.resizehandle');
-resizeHandle_aboutme.addEventListener('mousedown', initializeResize_aboutme);
-function initializeResize_aboutme(e) {
-  e.preventDefault();
 
-  document.addEventListener('mousemove', startResize_aboutme);
-  document.addEventListener('mouseup', stopResize_aboutme);
-}
-function startResize_aboutme(e) {
-  const newWidth = e.clientX - About_Me.getBoundingClientRect().left;
-  const newHeight = e.clientY - About_Me.getBoundingClientRect().top;
+About_Me_closebtn.addEventListener('click', () => {window_close(About_Me)});
+// make window
+About_Me.querySelector('.resizehandle').addEventListener('mousedown', initializeResize(About_Me, 200, 200));
 
-  // Limit minimum and maximum width and height
-  const limitedWidth_aboutme = Math.max(250, newWidth);
-  const limitedHeight_aboutme = Math.max(200, newHeight);
-
-  About_Me.style.width = `${limitedWidth_aboutme}px`;
-  About_Me.style.height = `${limitedHeight_aboutme}px`;
-
-  // Update title bar position based on new width
-  about_me_titlebar.style.width = `${limitedWidth_aboutme}px`;
-}
-function stopResize_aboutme() {
-  document.removeEventListener('mousemove', startResize_aboutme);
-  document.removeEventListener('mouseup', stopResize_aboutme);
-}
 // check is something else is clicked and reset selection
 document.addEventListener('click', function(event) {
   const clickedElement_aboutme = event.target;
@@ -238,7 +220,7 @@ document.addEventListener('click', function(event) {
     // reset selection and reset style
     About_Me_TXT.style.border = "none";
     About_Me_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
-    isWaiting_aboutme = false;
+    isWaiting = false;
   }
 });
 
@@ -270,44 +252,15 @@ Socials_ICO.addEventListener("click", function() {
   }
   lastClickTime_socials = currentTime;
 });
-function Socials_close() {
-  // hide app window
-  Socials.style.display = 'none';
-};
-Socials_closebtn.addEventListener('click', () => {
-  Socials_close();
-});
-// make Socials window
-const resizeHandle_socials = Socials.querySelector('.resizehandle');
-resizeHandle_socials.addEventListener('mousedown', initializeResize_socials);
-function initializeResize_socials(e) {
-  e.preventDefault();
 
-  document.addEventListener('mousemove', startResize_socials);
-  document.addEventListener('mouseup', stopResize_socials);
-}
-function startResize_socials(e) {
-  const newWidth = e.clientX - Socials.getBoundingClientRect().left;
-  const newHeight = e.clientY - Socials.getBoundingClientRect().top;
+Socials_closebtn.addEventListener('click', () => {window_close(Socials);});
+// make window
+Socials.querySelector('.resizehandle').addEventListener('mousedown', initializeResize(Socials, 330, 135));
 
-  // Limit minimum and maximum width and height
-  const limitedWidth_socials = Math.max(330, newWidth);
-  const limitedHeight_socials = Math.max(135, newHeight);
-
-  Socials.style.width = `${limitedWidth_socials}px`;
-  Socials.style.height = `${limitedHeight_socials}px`;
-
-  // Update title bar position based on new width
-  socials_titlebar.style.width = `${limitedWidth_socials}px`;
-}
-function stopResize_socials() {
-  document.removeEventListener('mousemove', startResize_socials);
-  document.removeEventListener('mouseup', stopResize_socials);
-}
 // check is something else is clicked and reset selection
 document.addEventListener('click', function(event) {
   const clickedElement_socials = event.target;
-  // Check if the clicked element is not the excluded element (Socials_ICO)
+  // Check if the clicked element is not the excluded element (GuestBook_ICO)
   if (clickedElement_socials !== Socials_ICO) {
     // reset selection and reset style
     Socials_TXT.style.border = "none";
@@ -347,40 +300,11 @@ Guest_Book_ICO.addEventListener("click", function() {
   }
   lastClickTime_guest_book = currentTime;
 });
-function Guest_Book_close() {
-  // hide app window
-  Guest_Book.style.display = 'none';
-};
-Guest_Book_closebtn.addEventListener('click', () => {
-  Guest_Book_close();
-});
-// make Guest Book window
-const resizeHandle_guest_book = Guest_Book.querySelector('.resizehandle');
-resizeHandle_guest_book.addEventListener('mousedown', initializeResize_guest_book);
-function initializeResize_guest_book(e) {
-  e.preventDefault();
 
-  document.addEventListener('mousemove', startResize_guest_book);
-  document.addEventListener('mouseup', stopResize_guest_book);
-}
-function startResize_guest_book(e) {
-  const newWidth = e.clientX - Guest_Book.getBoundingClientRect().left;
-  const newHeight = e.clientY - Guest_Book.getBoundingClientRect().top;
+Guest_Book_closebtn.addEventListener('click', () => {window_close(Guest_Book)});
+// make window
+Guest_Book.querySelector('.resizehandle').addEventListener('mousedown', initializeResize(Guest_Book, 300, 200));
 
-  // Limit minimum and maximum width and height
-  const limitedWidth_guest_book = Math.max(300, newWidth);
-  const limitedHeight_guest_book = Math.max(200, newHeight);
-
-  Guest_Book.style.width = `${limitedWidth_guest_book}px`;
-  Guest_Book.style.height = `${limitedHeight_guest_book}px`;
-
-  // Update title bar position based on new width
-  guest_book_titlebar.style.width = `${limitedWidth_guest_book}px`;
-}
-function stopResize_guest_book() {
-  document.removeEventListener('mousemove', startResize_guest_book);
-  document.removeEventListener('mouseup', stopResize_guest_book);
-}
 // check is something else is clicked and reset selection
 document.addEventListener('click', function(event) {
   const clickedElement_guest_book = event.target;
