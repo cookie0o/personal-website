@@ -116,3 +116,57 @@
   color: white;
 }
 
+/* Webrings */
+.desktop .webring-ico {
+  position: absolute;
+  width: 100px;
+  height: 70px;
+  left: 140px;
+
+  background-color: transparent;
+  border: 0px;
+
+  background-image: url('../IMG/ico/globe_map.png');
+  background-repeat: no-repeat;
+  background-position: 25px center;
+  background-size: 60px 60px;
+
+  text-align: center;
+} .desktop .webring-ico .txt {
+  position: absolute;
+  top: 60px;
+
+  width: 98px;
+
+  font-family: "win95";
+  font-size: 18px;
+  color: white;
+}
+
+/* Music */
+.desktop .music-ico {
+  position: absolute;
+  width: 100px;
+  height: 70px;
+  left: 140px;
+  top: 125px;
+
+  background-color: transparent;
+  border: 0px;
+
+  background-image: url('../IMG/ico/loudspeaker.png');
+  background-repeat: no-repeat;
+  background-position: 25px center;
+  background-size: 60px 60px;
+
+  text-align: center;
+} .desktop .music-ico .txt {
+  position: absolute;
+  top: 60px;
+
+  width: 98px;
+
+  font-family: "win95";
+  font-size: 18px;
+  color: white;
+}

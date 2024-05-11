@@ -2,9 +2,11 @@
 <html lang="en-EN">
 
 <head>
+    <!-- go to the mobile page if the device is a phone -->
+    <!--<script src="./JS/ismobile.js"></script>
+
     <!-- change scale on mobile devices and define charset - content-->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <!-- Set page title and icon -->
     <title>Hello!</title>
     <link rel="icon" type="image/x-icon" href="https://findicons.com/files/icons/2779/simple_icons/128/github_128_black.png">
@@ -13,7 +15,6 @@
     <link rel="stylesheet" #type="text/css" href="./CSS/desktop.css" onload="this.media='all'">
     <link rel="stylesheet" #type="text/css" href="./CSS/misc.css">
     <link rel="stylesheet" #type="text/css" href="./CSS/windows.css">
-    <link rel="stylesheet" #type="text/css" href="./CSS/mobile.css">
     <!-------------------------------------------------------------------------------------------------->
 
     <!-- misc elements -->
@@ -59,6 +60,12 @@
             </button>
             <button class="guest-book-ico" id="guest_book_ico">
                 <p class="txt" id="guest_book_txt"></p>
+            </button>
+            <button class="webring-ico" id="webring_ico">
+                <p class="txt" id="webring_txt"></p>
+            </button>
+            <button class="music-ico" id="music_ico">
+                <p class="txt" id="music_txt"></p>
             </button>
         </div>
         <!-- random (display without interaction) -->
@@ -107,6 +114,7 @@
                 </div>
             </div>
         </div>
+
         <!-- About Me (.TXT) -->
         <div class="about-me" id="about-me" style="display: none;">
             <div class="resizehandle"></div>
@@ -125,6 +133,7 @@
                 </p>
             </div>
         </div>
+
         <!-- Socials -->
         <div class="socials" id="socials" style="display: none;">
             <div class="resizehandle"></div>
@@ -140,15 +149,17 @@
                 <div class="bar-bottom"></div>
 
                 <div class="github">
-                    <img src="./IMG/ico/github.png" alt="Github" class="github-ico">
+                    <img loading="lazy" src="./IMG/ico/github.png" alt="Github" class="github-ico">
                     <a href="https://github.com/cookie0o">Github</a>
                 </div>
                 <div class="mail">
-                    <img src="./IMG/ico/mail.png" alt="Mail" class="mail-ico">
-                    <a href="mailto:raphael.contact@zohomail.eu">raphael.contact@zohomail.eu</a>
+                    <img loading="lazy" src="./IMG/ico/mail.png" alt="Mail" class="mail-ico">
+                    <!-- Obfuscated Email Address Link -->
+                    <a href='mail&#116;o&#58;mailto&#58;&#114;aphae&#108;&#46;con&#37;74%&#54;1ct&#64;&#122;o%6&#56;%6&#70;m&#97;&#37;69%&#54;&#67;&#46;e&#117;'>ra&#112;hael&#46;&#99;ontact&#64;&#122;oh&#111;mai&#108;&#46;eu</a>
                 </div>
             </div>
         </div>
+
         <!-- Guest Book -->
         <div class="guest-book" id="guest-book" style="display: none;">
             <div class="resizehandle"></div>
@@ -164,7 +175,47 @@
                 <div class="bar"></div>
                 <!-- show guest book website -->
                 <iframe src="" class="iframe" id="guest_book_iframe"></iframe>
-                </p>
+                
+            </div>
+        </div>
+
+        <!-- Webrings -->
+        <div class="webring" id="webring" style="display: none;">
+            <div class="resizehandle"></div>
+            <div class="titlebar" id="webring_titlebar">
+                <div class="title_ico"></div>
+                <div class="title" id="webringtitle"></div>
+                <button class="closebtn" id="webring_closebtn" aria-label="Close this Window"></button>
+            </div>
+            <div class="container">
+                <div class="bar-top"></div>
+                <div class="bar-left"></div>
+                <div class="bar-right"></div>
+                <div class="bar-bottom"></div>
+
+                <div class="webrings-container">
+                </div>
+            </div>
+        </div>
+
+        <!-- Music -->
+        <div class="music" id="music" style="display: none;">
+            <div class="resizehandle"></div>
+            <div class="titlebar" id="music_titlebar">
+                <div class="title_ico"></div>
+                <div class="title" id="musictitle"></div>
+                <button class="closebtn" id="music_closebtn" aria-label="Close this Window"></button>
+            </div>
+            <div class="container">
+                <div class="bar-top"></div>
+                <div class="bar-left"></div>
+                <div class="bar-right"></div>
+                <div class="bar-bottom"></div>
+
+                <div class="music-container">
+                    <iframe class="spotify-embed" id="spotify-embed" src="https://open.spotify.com/embed/playlist/5H3DFhpmPEF3omNSHGHd8i?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                    </iframe>
+                </div>
             </div>
         </div>
     </body>

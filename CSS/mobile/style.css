@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'win95';
+  src: url('../FONTS/w95fa.woff2') format('woff2'),
+        url('../FONTS/w95fa.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #018281;
+  background-size: cover;
+
+  overflow: hidden;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.header-txt {
+  width: 100%;
+  margin-top: 0;
+
+  text-align: center;
+  font-family: "win95";
+  font-size: 80px;
+}

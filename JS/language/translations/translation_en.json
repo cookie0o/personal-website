@@ -10,10 +10,14 @@
     "about_me_txt"   : "About Me",
     "socials_txt"    : "Socials",
     "guest_book_txt" : "Guest Book",
+    "webring_txt"    : "Webrings",
+    "music_txt"      : "Music",
 
     "socialstitle"   : "Socials",
     "randomtitle"    : "Random",
     "guestbooktitle" : "Guest Book",
+    "webringtitle"   : "Webrings",
+    "musictitle"     : "Music",
 
     "recyclebintitle": "Recycle Bin",
     "categorie1"     : "Name",

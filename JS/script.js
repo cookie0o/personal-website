@@ -154,3 +154,4 @@ window.onload = function() {
     randomwindow.style.height = image.naturalHeight + 50 + "px";
   };
 };
+

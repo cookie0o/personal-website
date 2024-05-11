@@ -29,11 +29,15 @@ function updateContent(translation, language) {
         document.getElementById('about_me_txt').innerText = translation[language].about_me_txt;
         document.getElementById('socials_txt').innerText = translation[language].socials_txt;
         document.getElementById('guest_book_txt').innerText = translation[language].guest_book_txt;
+        document.getElementById('webring_txt').innerText = translation[language].webring_txt;
+        document.getElementById('music_txt').innerText = translation[language].music_txt;
         // apps (windows)
         // other titles
         document.getElementById('socialstitle').innerText = translation[language].socialstitle;
         document.getElementById('randomtitle').innerText = translation[language].randomtitle;
         document.getElementById('guestbooktitle').innerText = translation[language].guestbooktitle;
+        document.getElementById('webringtitle').innerText = translation[language].webringtitle;
+        document.getElementById('musictitle').innerText = translation[language].musictitle;
         // Recycle Bin
         document.getElementById('recyclebintitle').innerText = translation[language].recyclebintitle;
         document.getElementById('categorie1').innerText = translation[language].categorie1;

@@ -26,6 +26,42 @@
 a:visited {
   color: blue;
 }
+.bar-top {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  margin-top: 25px;
+  left: 0;
+
+  background-color: #C0C0C0;
+}
+.bar-left {
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  left: 0;
+
+  background-color: #C0C0C0;
+}
+.bar-right {
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  right: 0;
+
+  background-color: #C0C0C0;
+}
+.bar-bottom {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  bottom: 0;
+  left: 0;
+
+  background-color: #C0C0C0;
+} 
+
+
 
 
 /* random */
@@ -303,40 +339,6 @@ a:visited {
     
     background-color: white;
     }
-    .about-me .container .bar-top {
-      position: absolute;
-      width: 100%;
-      height: 5px;
-      margin-top: 25px;
-      left: 0;
-
-      background-color: #C0C0C0;
-    }
-    .about-me .container .bar-left {
-      position: absolute;
-      width: 3px;
-      height: 100%;
-      left: 0;
-
-      background-color: #C0C0C0;
-    }
-    .about-me .container .bar-right {
-      position: absolute;
-      width: 3px;
-      height: 100%;
-      right: 0;
-
-      background-color: #C0C0C0;
-    }
-    .about-me .container .bar-bottom {
-      position: absolute;
-      width: 100%;
-      height: 20px;
-      bottom: 0;
-      left: 0;
-
-      background-color: #C0C0C0;
-    }
     .about-me .container .text {
       width: 100%;
       left: 0;
@@ -398,7 +400,7 @@ a:visited {
     width: 22px;
     height: 22px;
 
-    background-image: url('../IMG/ico/online_file.png');
+    background-image: url('../IMG/ico/computer.png');
     background-repeat: no-repeat;
     background-size: 20px 20px;
   }
@@ -421,40 +423,6 @@ a:visited {
     
     background-color: white;
     }
-    .socials .container .bar-top {
-      position: absolute;
-      width: 100%;
-      height: 5px;
-      margin-top: 25px;
-      left: 0;
-
-      background-color: #C0C0C0;
-    }
-    .socials .container .bar-left {
-      position: absolute;
-      width: 3px;
-      height: 100%;
-      left: 0;
-
-      background-color: #C0C0C0;
-    }
-    .socials .container .bar-right {
-      position: absolute;
-      width: 3px;
-      height: 100%;
-      right: 0;
-
-      background-color: #C0C0C0;
-    }
-    .socials .container .bar-bottom {
-      position: absolute;
-      width: 100%;
-      height: 20px;
-      bottom: 0;
-      left: 0;
-
-      background-color: #C0C0C0;
-    } 
     .socials .container .github {
       position: absolute;
       width: 100%;
@@ -586,3 +554,168 @@ a:visited {
       -webkit-transform-origin: 0 0;
       transform-origin: 0 0;
 }
+
+
+/* Webrings */
+.webring {
+  position: absolute;
+  z-index: 991;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 300px;
+
+  border: 2px solid #9a9c9c ;
+  border-color: #9a9c9c;
+  border-width: 2px;
+  border-top-width: 3px;
+  border-left-width: 3px;
+  border-top-color: #F5FFFF;
+  border-left-color: #F5FFFF;
+
+  font-family: "win95";
+  font-size: 20px;
+  word-wrap: break-word;
+
+  background-color: #C0C0C0;
+  }
+  .webring .titlebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 550px;
+    height: 25px;
+  
+    background-color: #0000AA;
+    
+    color: white;
+  }
+  .webring .title_ico {
+    position: absolute;
+    z-index: 993;
+    top: 3px;
+    left: 4px;
+
+    width: 22px;
+    height: 22px;
+
+    background-image: url('../IMG/ico/globe_map.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+  }
+  .webring .titlebar .title {
+    position: absolute;
+    z-index: 993;
+    top: 5px;
+    left: 5px;
+    width: 500px;
+    height: 25px;
+
+    padding-left: 20px;
+  }
+  /* webring insides */
+  .webring .container {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+    background-image: url("../IMG/background.gif");
+    }
+    .webring .container .webrings-container {
+      position: absolute;
+      width: 100%;
+      height: calc(-40px + 100%);
+
+      margin-top: 35px;
+
+      background-image: url("../IMG/404notfound.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+
+/* Music */
+.music {
+  position: absolute;
+  z-index: 991;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 300px;
+
+  border: 2px solid #9a9c9c ;
+  border-color: #9a9c9c;
+  border-width: 2px;
+  border-top-width: 3px;
+  border-left-width: 3px;
+  border-top-color: #F5FFFF;
+  border-left-color: #F5FFFF;
+
+  font-family: "win95";
+  font-size: 20px;
+  word-wrap: break-word;
+
+  background-color: #C0C0C0;
+  }
+  .music .titlebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 550px;
+    height: 25px;
+  
+    background-color: #0000AA;
+    
+    color: white;
+  }
+  .music .title_ico {
+    position: absolute;
+    z-index: 993;
+    top: 3px;
+    left: 4px;
+
+    width: 22px;
+    height: 22px;
+
+    background-image: url('../IMG/ico/loudspeaker.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+  }
+  .music .titlebar .title {
+    position: absolute;
+    z-index: 993;
+    top: 5px;
+    left: 5px;
+    width: 500px;
+    height: 25px;
+
+    padding-left: 20px;
+  }
+  /* music insides */
+  .music .container {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+    background-color: white;
+    }
+    .music .container .music-container {
+      position: relative;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 35px;
+
+      }
+      .music .container .music-container .spotify-embed {
+        position: relative;
+        width: 100%;
+      
+        height: 300px;
+        max-height: 640px;
+
+        border: none;
+      }

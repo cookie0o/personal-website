@@ -26,10 +26,22 @@ const Guest_Book = document.getElementById('guest-book');
   const Guest_Book_TXT = document.getElementById('guest_book_txt');
   const Guest_Book_closebtn = document.getElementById('guest_book_closebtn');
 
+const Webring = document.getElementById('webring');
+  const webring_titlebar = document.getElementById('webring_titlebar');
+  const webring_ICO = document.getElementById('webring_ico');
+  const webring_TXT = document.getElementById('webring_txt');
+  const webring_closebtn = document.getElementById('webring_closebtn');
+
+const Music = document.getElementById('music');
+  const music_titlebar = document.getElementById('music_titlebar');
+  const music_ICO = document.getElementById('music_ico');
+  const music_TXT = document.getElementById('music_txt');
+  const music_closebtn = document.getElementById('music_closebtn');
+
 const random = document.getElementById('random');
 
 
-const titlebarIds = ['recycle-bin', 'about-me', "socials", "guest-book"];
+const titlebarIds = ['recycle-bin', 'about-me', "socials", "guest-book", "webring", "music"];
 
 // make a window draggable
 function dragElement_windows(window, titlebar) {
@@ -76,6 +88,8 @@ dragElement_windows(Recycle_Bin, document.getElementById("recycle_bin_titlebar")
 dragElement_windows(About_Me, document.getElementById("about_me_titlebar"));
 dragElement_windows(Socials, document.getElementById("socials_titlebar"));
 dragElement_windows(Guest_Book, document.getElementById("guest_book_titlebar"));
+dragElement_windows(Webring, document.getElementById("webring_titlebar"));
+dragElement_windows(Music, document.getElementById("music_titlebar"));
 
 // change z index of clicked windows
 const zindexInactive = 991;
@@ -103,7 +117,7 @@ function window_close(window) {
   window.style.display = 'none';
 };
 
-function initializeResize(window, maxW = 20, maxH = 20, minW) {
+function initializeResize(window, maxW = 20, maxH = 20, music=false, minW) {
   return function (e) {
     e.preventDefault();
     
@@ -119,6 +133,11 @@ function initializeResize(window, maxW = 20, maxH = 20, minW) {
         limitedWidth = Math.max(maxW, newWidth);
       }
       const limitedHeight = Math.max(maxH, newHeight);
+
+      // if its the music window change the height of the spotify embed dynamically
+      if (music != false) {
+        document.getElementById("spotify-embed").style.height = `${(limitedHeight - 63)}px`;;
+      }
 
       window.style.width = `${limitedWidth}px`;
       window.style.height = `${limitedHeight}px`;
@@ -166,7 +185,7 @@ Recycle_Bin_ICO.addEventListener("click", function() {
 
 Recycle_Bin_closebtn.addEventListener('click', () => {window_close(Recycle_Bin)});
 // make window
-Recycle_Bin.querySelector('.resizehandle').addEventListener('mousedown', initializeResize(Recycle_Bin, 593, 200, 593));
+Recycle_Bin.querySelector('.resizehandle').addEventListener('mousedown', initializeResize(Recycle_Bin, 593, 200, false, 593));
 
 // check is something else is clicked and reset selection
 document.addEventListener('click', function(event) {
@@ -314,5 +333,93 @@ document.addEventListener('click', function(event) {
     Guest_Book_TXT.style.border = "none";
     Guest_Book_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
     isWaiting_guest_book = false;
+  }
+});
+
+
+
+// Webring
+let lastClickTime_webring = 0;
+let isWaiting_webring = false;
+webring_ICO.addEventListener("click", function() {
+  const currentTime = new Date().getTime();
+  // run second function if clicked again within 700ms
+  if (currentTime - lastClickTime_webring <= 600 && !isWaiting_webring) {
+    // remove selection
+    webring_TXT.style.border = "none";
+    webring_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
+    // open win
+    Webring.style.display = 'block';
+    
+    // reset
+    isWaiting_webring = true;
+    // simulate waiting for 700ms and then reset isWaiting_webring
+    setTimeout(function() {
+      isWaiting_webring = false;
+    }, 700);
+  } else {
+    // show that the app is selected
+    webring_TXT.style.border = "1px dotted white";
+    webring_TXT.style.background = "linear-gradient(rgba(0, 0, 170, 0.5), rgba(0, 0, 170, 0.5))";
+  }
+  lastClickTime_webring = currentTime;
+});
+
+webring_closebtn.addEventListener('click', () => {window_close(Webring);});
+// make window
+Webring.querySelector('.resizehandle').addEventListener('mousedown', initializeResize(Webring, 330, 135));
+
+// check is something else is clicked and reset selection
+document.addEventListener('click', function(event) {
+  const clickedElement_webring = event.target;
+  // Check if the clicked element is not the excluded element (GuestBook_ICO)
+  if (clickedElement_webring !== webring_ICO) {
+    // reset selection and reset style
+    webring_TXT.style.border = "none";
+    webring_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
+    isWaiting_webring = false;
+  }
+});
+
+// Music
+let lastClickTime_music = 0;
+let isWaiting_music = false;
+music_ICO.addEventListener("click", function() {
+  const currentTime = new Date().getTime();
+  // run second function if clicked again within 700ms
+  if (currentTime - lastClickTime_music <= 600 && !isWaiting_music) {
+    // remove selection
+    music_TXT.style.border = "none";
+    music_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
+    // open win
+    Music.style.display = 'block';
+    
+    // reset
+    isWaiting_music = true;
+    // simulate waiting for 700ms and then reset isWaiting_music
+    setTimeout(function() {
+      isWaiting_music = false;
+    }, 700);
+  } else {
+    // show that the app is selected
+    music_TXT.style.border = "1px dotted white";
+    music_TXT.style.background = "linear-gradient(rgba(0, 0, 170, 0.5), rgba(0, 0, 170, 0.5))";
+  }
+  lastClickTime_music = currentTime;
+});
+
+music_closebtn.addEventListener('click', () => {window_close(Music);});
+// make window
+Music.querySelector('.resizehandle').addEventListener('mousedown', initializeResize(Music, 330, 135, true));
+
+// check is something else is clicked and reset selection
+document.addEventListener('click', function(event) {
+  const clickedElement_music = event.target;
+  // Check if the clicked element is not the excluded element (music_ICO)
+  if (clickedElement_music !== music_ICO) {
+    // reset selection and reset style
+    music_TXT.style.border = "none";
+    music_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
+    isWaiting_music = false;
   }
 });
