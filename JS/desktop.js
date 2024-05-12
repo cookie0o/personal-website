@@ -1,5 +1,4 @@
 // elements
-const titlebars = document.querySelectorAll('.titlebar');
 const errorbox = document.getElementById("errorbox")
 
 const Recycle_Bin = document.getElementById('recycle-bin');
@@ -37,8 +36,6 @@ const Music = document.getElementById('music');
   const music_ICO = document.getElementById('music_ico');
   const music_TXT = document.getElementById('music_txt');
   const music_closebtn = document.getElementById('music_closebtn');
-
-const random = document.getElementById('random');
 
 
 const titlebarIds = ['recycle-bin', 'about-me', "socials", "guest-book", "webring", "music"];
@@ -83,7 +80,6 @@ function dragElement_windows(window, titlebar) {
   }
 }
 dragElement_windows(errorbox, document.getElementById("titlebar"));
-dragElement_windows(random, document.getElementById("random_titlebar"));
 dragElement_windows(Recycle_Bin, document.getElementById("recycle_bin_titlebar"));
 dragElement_windows(About_Me, document.getElementById("about_me_titlebar"));
 dragElement_windows(Socials, document.getElementById("socials_titlebar"));

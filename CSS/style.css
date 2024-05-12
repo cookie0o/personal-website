@@ -9,6 +9,8 @@
 body {
   background-color: #018281;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
   overflow: hidden;
 

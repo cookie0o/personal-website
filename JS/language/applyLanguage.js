@@ -34,7 +34,6 @@ function updateContent(translation, language) {
         // apps (windows)
         // other titles
         document.getElementById('socialstitle').innerText = translation[language].socialstitle;
-        document.getElementById('randomtitle').innerText = translation[language].randomtitle;
         document.getElementById('guestbooktitle').innerText = translation[language].guestbooktitle;
         document.getElementById('webringtitle').innerText = translation[language].webringtitle;
         document.getElementById('musictitle').innerText = translation[language].musictitle;
