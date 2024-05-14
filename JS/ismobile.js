@@ -7,6 +7,4 @@ function mobileCheck() {
 // go to the mobile page if mobileCheck return true
 if (mobileCheck() == true) {
     window.location.replace("./mobile-index.html");
-} else { 
-    return
-}
+};
