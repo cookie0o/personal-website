@@ -377,6 +377,8 @@ document.addEventListener('click', function(event) {
   }
 });
 
+
+
 // Music
 let lastClickTime_music = 0;
 let isWaiting_music = false;
@@ -387,6 +389,9 @@ music_ICO.addEventListener("click", function() {
     // remove selection
     music_TXT.style.border = "none";
     music_TXT.style.background = "linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0))";
+   
+    // load the website (only now else it will load even when not open)
+    document.getElementById("spotify_embed_iframe").src = "https://open.spotify.com/embed/playlist/5H3DFhpmPEF3omNSHGHd8i?utm_source=generator"
     // open win
     Music.style.display = 'block';
     
@@ -419,3 +424,4 @@ document.addEventListener('click', function(event) {
     isWaiting_music = false;
   }
 });
+

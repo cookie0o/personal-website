@@ -166,8 +166,9 @@ function loadRandom() {
 
   // Wait for the image to load
   image.onload = function() {
-    // Apply the background to the body
+    // Apply the background to the body and set its priority to high
     document.body.style.backgroundImage = "url('" + bg + "')";
+    document.body.style.setProperty("fetchpriority", "high", "important");
   };
 localStorage.setItem("lastbg", RAW_bg)
 };
