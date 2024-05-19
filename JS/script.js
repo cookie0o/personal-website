@@ -125,38 +125,53 @@ shutdownbtn.addEventListener('click', () => {
 
 // Function to change the background to a random background
 function loadRandom() {
-  // base url
-  var url = "https://steamuserimages-a.akamaihd.net/ugc/";
+  // Base URLs for different sources
+  var baseUrls = {
+    "steam": "https://steamuserimages-a.akamaihd.net/ugc/",
+    "ibb": "https://i.ibb.co/"
+  };
 
-  // Array containing the URLs of the background images
+  // Array containing the URLs or relative paths of the background images
   var backgrounds = [
-    "2032857200428334921/602AFD1E3D8AD05F15A8F9A4CF18BCAC550098F9/",
-    "2408935303712749509/63AD24A580E82F917FA29FA056563B91DE4250F6/",
-    "2408935303712756203/1430AACC505FAACA9BAFC8F4AE6629D294BCB3D3/",
-    "2465231303170403926/A7FE168534B860D53EE1E206A022B94AD2DC265A/",
-    "2032857200428334407/7326B885BDD2F0940C8ECDE5827BC359681C0F8A/",
-    "2032857200428335511/5F446354D114DDD98F206E8F4B36001DC0E6306C/",
-    "2408935303712753609/D9276C29D5F2B6F23A64CE70175F581B7F866B0E/",
-    "2408935303712757926/072034F1F69F40D290ABCA5813766D833700F1AC/",
-    "2408935303712757579/52B881ADEDC39E5E50D21918234E67D4FED6097D/",
-    "1813239499465677235/3379799A35851884439A38332978E5B6B9DFEAD6/",
-    "2027218894809984359/B6673AF9B63D7E6AB31D19CDA247954B00D7B3BB/",
-    "/2465231303170401801/634B0AC41D4E14A1A119D3A0B2177DEB8D98F8D6/"
+    "steam:2032857200428334921/602AFD1E3D8AD05F15A8F9A4CF18BCAC550098F9/",
+    "steam:2408935303712749509/63AD24A580E82F917FA29FA056563B91DE4250F6/",
+    "steam:2408935303712756203/1430AACC505FAACA9BAFC8F4AE6629D294BCB3D3/",
+    "steam:2465231303170403926/A7FE168534B860D53EE1E206A022B94AD2DC265A/",
+    "steam:2032857200428334407/7326B885BDD2F0940C8ECDE5827BC359681C0F8A/",
+    "steam:2032857200428335511/5F446354D114DDD98F206E8F4B36001DC0E6306C/",
+    "steam:2408935303712753609/D9276C29D5F2B6F23A64CE70175F581B7F866B0E/",
+    "steam:2408935303712757926/072034F1F69F40D290ABCA5813766D833700F1AC/",
+    "steam:2408935303712757579/52B881ADEDC39E5E50D21918234E67D4FED6097D/",
+    "steam:1813239499465677235/3379799A35851884439A38332978E5B6B9DFEAD6/",
+    "steam:2027218894809984359/B6673AF9B63D7E6AB31D19CDA247954B00D7B3BB/",
+    "steam:2465231303170401801/634B0AC41D4E14A1A119D3A0B2177DEB8D98F8D6/",
+
+    "ibb:10H2G1M/MC-Base-Profile-Screenshot-2024-05-19-01-04-22-86.png",
+    "ibb:HCFVPcd/MC-Base-Profile-Screenshot-2024-05-18-23-21-15-20.png",
+    "ibb:mzvhjdj/MC-Base-Profile-Screenshot-2024-05-19-00-30-32-28.png",
+    "ibb:ZYvbb89/MC-Base-Profile-Screenshot-2024-05-19-00-30-48-28.png",
+    "ibb:j8xmQ8p/MC-Base-Profile-Screenshot-2024-05-19-00-31-01-42.png",
+    "ibb:pQ13J11/MC-Base-Profile-Screenshot-2024-05-19-00-31-50-77.png",
+    "ibb:6wKV6rD/MC-Base-Profile-Screenshot-2024-05-19-01-03-53-32.png",
+    "ibb:Db1z7Tn/MC-Base-Profile-Screenshot-2024-05-19-01-12-08-84.png",
+    "ibb:CKdbM0z/MC-Base-Profile-Screenshot-2024-05-19-01-10-03-34.png",
+    "ibb:26S5mVf/Base-Profile-Screenshot-2024-05-19-00-53-47-39.png",
   ];
 
   // Generate a random index to select a random background image URL
   var randomIndex = Math.floor(Math.random() * backgrounds.length);
-  var RAW_bg = backgrounds[randomIndex];
+  var rawBg = backgrounds[randomIndex];
 
-  var lastbg = localStorage.getItem("lastbg");
-  if (lastbg == RAW_bg) {
+  var lastBg = localStorage.getItem("lastbg");
+  if (lastBg == rawBg) {
     // If the last background is the same as the current one, choose another random background
-    var randomIndex = (randomIndex + 1); // Move to the next index
-    var RAW_bg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    randomIndex = (randomIndex + 1) % backgrounds.length; // Ensure we wrap around within the array bounds
+    rawBg = backgrounds[randomIndex];
   }
 
-  // Construct the complete background image URL
-  var bg = url + RAW_bg;
+  // Extract the prefix to determine the base URL
+  var [prefix, path] = rawBg.split(":", 2);
+  var bg = rawBg.startsWith("http") ? rawBg : (baseUrls[prefix] + path);
 
   // Create a new Image object to load the image
   var image = new Image();
@@ -170,6 +185,8 @@ function loadRandom() {
     document.body.style.backgroundImage = "url('" + bg + "')";
     document.body.style.setProperty("fetchpriority", "high", "important");
   };
-localStorage.setItem("lastbg", RAW_bg)
-};
+
+  // Store the current background URL in localStorage
+  localStorage.setItem("lastbg", rawBg);
+}
 loadRandom();
