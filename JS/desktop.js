@@ -113,7 +113,7 @@ function window_close(window) {
   window.style.display = 'none';
 };
 
-function initializeResize(window, maxW = 20, maxH = 20, music=false, minW) {
+function initializeResize(window, minW = 20, minH = 20, music=false, maxW, maxH) {
   return function (e) {
     e.preventDefault();
     
@@ -123,21 +123,21 @@ function initializeResize(window, maxW = 20, maxH = 20, music=false, minW) {
 
       var limitedWidth
 
-      if (minW != null) {
-        limitedWidth = Math.max(maxW, Math.min(minW, newWidth));
+      if (maxW != null) {
+        limitedWidth = Math.max(minW, Math.min(maxW, newWidth));
       } else {
-        limitedWidth = Math.max(maxW, newWidth);
+        limitedWidth = Math.max(minW, newWidth);
       }
-      const limitedHeight = Math.max(maxH, newHeight);
-
-      // if its the music window change the height of the spotify embed dynamically
-      if (music != false) {
-        document.getElementById("spotify-embed").style.height = `${(limitedHeight - 63)}px`;;
-      }
+      const limitedHeight = Math.max(minH, newHeight);
 
       window.style.width = `${limitedWidth}px`;
       window.style.height = `${limitedHeight}px`;
       window.querySelector('.titlebar').style.width = `${limitedWidth}px`;
+
+      // if its the music window change the height of the spotify embed dynamically
+      if (music != false) {
+        document.getElementById("spotify_embed_iframe").style.height = `${(limitedHeight - 63)}px`;;
+      }
     }
 
     function stopResize() {
@@ -411,7 +411,7 @@ music_ICO.addEventListener("click", function() {
 
 music_closebtn.addEventListener('click', () => {window_close(Music);});
 // make window
-Music.querySelector('.resizehandle').addEventListener('mousedown', initializeResize(Music, 330, 135, true));
+Music.querySelector('.resizehandle').addEventListener('mousedown', initializeResize(Music, 330, 160, true, null, 400));
 
 // check is something else is clicked and reset selection
 document.addEventListener('click', function(event) {
